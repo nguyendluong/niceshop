@@ -9,11 +9,11 @@
                 </div>
             </div>
             <div class="col-lg-10 col-md-8 col-6 position-i">
-                   <div class="menu-left transition">
-                    <div class="menu" >
+                <div class="menu-left transition">
+                    <div class="menu">
                         <ul>
                             <li>
-                                <a href="index.html">Home {{$temp}}</a>
+                                <a href="index.html">Home</a>
                             </li>
                             <li class="dropdown">
                                 <span class="opener plus"></span>
@@ -41,7 +41,8 @@
                                                     <div class="row">
                                                         <div class="col-xl-12 col-lg-12 col-md-12 pb-10">
                                                             <a href="product-detail.html" class="img-drop-bottom">
-                                                                <img src="/asset_client/images/menu.jpg" class="transition" alt="img">
+                                                                <img src="/asset_client/images/menu.jpg"
+                                                                    class="transition" alt="img">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -118,28 +119,32 @@
                         <li>
                             <div class="cart-menu">
                                 <div class="cart-icon position-r">
-                                    <img src="/asset_client/images/car-icon-w.png" class="position-r transition" alt="cart">
+                                    <img src="/asset_client/images/car-icon-w.png" class="position-r transition"
+                                        alt="cart">
                                 </div>
                                 <div class="cart-dropdown header-link-dropdown">
                                     <ul class="cart-list link-dropdown-list">
                                         <li>
-                                              <a href="javascript:void(0)" class="close-cart"><i class="fa fa-times-circle"></i></a>
+                                            <a href="javascript:void(0)" class="close-cart"><i
+                                                    class="fa fa-times-circle"></i></a>
                                             <figure>
                                                 <a href="product-detail.html" class="pull-left">
                                                     <img alt="product" src="/asset_client/images/product-1.jpg">
                                                 </a>
-                                                  <figcaption>
-                                                      <span>
-                                                          <a href="product-detail.html">Men's Full Sleeves Collar Shirt</a>
-                                                      </span>
+                                                <figcaption>
+                                                    <span>
+                                                        <a href="product-detail.html">Men's Full Sleeves Collar
+                                                            Shirt</a>
+                                                    </span>
                                                     <p class="cart-price">$14.99</p>
                                                     <div class="product-qty">
-                                                          <label>Qty:</label>
-                                                          <div class="custom-qty">
-                                                            <input type="text" name="qty" maxlength="8" value="1" title="Qty" class="input-text qty" disabled>
-                                                          </div>
+                                                        <label>Qty:</label>
+                                                        <div class="custom-qty">
+                                                            <input type="text" name="qty" maxlength="8" value="1"
+                                                                title="Qty" class="input-text qty" disabled>
+                                                        </div>
                                                     </div>
-                                                  </figcaption>
+                                                </figcaption>
                                             </figure>
                                         </li>
                                         <li>
@@ -148,18 +153,19 @@
                                                 <a href="product-detail.html" class="pull-left">
                                                     <img alt="product" src="/asset_client/images/product-2.jpg">
                                                 </a>
-                                                  <figcaption>
-                                                      <span>
-                                                          <a href="product-detail.html">Women's Cape Jacket</a>
-                                                      </span>
+                                                <figcaption>
+                                                    <span>
+                                                        <a href="product-detail.html">Women's Cape Jacket</a>
+                                                    </span>
                                                     <p class="cart-price">$14.99</p>
                                                     <div class="product-qty">
-                                                          <label>Qty:</label>
-                                                          <div class="custom-qty">
-                                                            <input type="text" name="qty" maxlength="8" value="1" title="Qty" class="input-text qty" disabled>
-                                                          </div>
+                                                        <label>Qty:</label>
+                                                        <div class="custom-qty">
+                                                            <input type="text" name="qty" maxlength="8" value="1"
+                                                                title="Qty" class="input-text qty" disabled>
+                                                        </div>
                                                     </div>
-                                                  </figcaption>
+                                                </figcaption>
                                             </figure>
                                         </li>
                                     </ul>
