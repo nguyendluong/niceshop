@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Size;
+use App\Http\Controllers\Controller;
+use App\Models\Vote;
 use Illuminate\Http\Request;
 
-class SizeController extends Controller
+class VoteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class SizeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Size  $size
+     * @param  \App\Models\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function show(Size $size)
+    public function show(Vote $vote)
     {
         //
     }
@@ -52,10 +53,10 @@ class SizeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Size  $size
+     * @param  \App\Models\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function edit(Size $size)
+    public function edit(Vote $vote)
     {
         //
     }
@@ -64,10 +65,10 @@ class SizeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Size  $size
+     * @param  \App\Models\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Size $size)
+    public function update(Request $request, Vote $vote)
     {
         //
     }
@@ -75,10 +76,10 @@ class SizeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Size  $size
+     * @param  \App\Models\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Size $size)
+    public function destroy(Vote $vote)
     {
         //
     }

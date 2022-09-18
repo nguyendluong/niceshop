@@ -32,7 +32,7 @@ News
 @section('js')
 <script>
 CKEDITOR.replace('js-content-news', {
-    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+    filebrowserUploadUrl: "{{route('admin.upload', ['_token' => csrf_token() ])}}",
     filebrowserUploadMethod: 'form'
 });
 </script>

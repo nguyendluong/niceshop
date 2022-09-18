@@ -8,14 +8,14 @@ Edit News
     <div class="form-group">
         <fieldset class="form-group">
             <label for="basicInput">Title news</label>
-            <input type="text" name="title" class="form-control" id="basicInput"value="{{ $news->title }}"
-                        required data-validation-required-message="This title field is required">
+            <input type="text" name="title" class="form-control" id="basicInput" value="{{ $news->title }}" required
+                data-validation-required-message="This title field is required">
         </fieldset>
         <fieldset class="form-group">
             <label for="descTextarea">Content news</label>
             <textarea class="form-control" id="js-content-news" name="content" rows="15"
-                placeholder="content news........" 
-                        required data-validation-required-message="This content field is required">{{ $news->content }}</textarea>
+                placeholder="content news........" required
+                data-validation-required-message="This content field is required">{{ $news->content }}</textarea>
         </fieldset>
         <div class="form-group">
             <label>Status</label>
@@ -34,7 +34,7 @@ Edit News
 @section('js')
 <script>
 CKEDITOR.replace('js-content-news', {
-    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+    filebrowserUploadUrl: "{{route('admin.upload', ['_token' => csrf_token() ])}}",
     filebrowserUploadMethod: 'form'
 });
 </script>

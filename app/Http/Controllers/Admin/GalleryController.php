@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Vote;
+use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
-class VoteController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class VoteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Vote  $vote
+     * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function show(Vote $vote)
+    public function show(Gallery $gallery)
     {
         //
     }
@@ -52,10 +53,10 @@ class VoteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Vote  $vote
+     * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vote $vote)
+    public function edit(Gallery $gallery)
     {
         //
     }
@@ -64,10 +65,10 @@ class VoteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Vote  $vote
+     * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vote $vote)
+    public function update(Request $request, Gallery $gallery)
     {
         //
     }
@@ -75,11 +76,15 @@ class VoteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Vote  $vote
+     * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vote $vote)
+
+    public function destroy($id)
     {
-        //
+        Gallery::find($id)->delete($id);
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
     }
 }
