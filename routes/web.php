@@ -21,7 +21,7 @@ Route::get('/', function () {
 // Route::get('/index', [\App\Http\Controllers\TestController::class, 'index']);
 Route::group(['prefix' => '/admin'], function () {
     Route::get('/', function () {
-        return view('admin.index');
+        return view('admin.login.login');
     });
 
     Route::group(['prefix' => '/category'], function () {
@@ -67,7 +67,7 @@ Route::group(['prefix' => '/admin'], function () {
 
         Route::get('/create', [App\Http\Controllers\ProductController::class, 'create']);
         Route::post('/create', [App\Http\Controllers\ProductController::class, 'store']);
-      
+
         Route::get('/update/{id}', [App\Http\Controllers\ProductController::class, 'edit']);
         Route::post('/update/{id}', [App\Http\Controllers\ProductController::class, 'update']);
 
@@ -134,12 +134,19 @@ Route::get('/', [App\Http\Controllers\OrderController::class, 'index']);
 
 
 Route::group(['prefix' => '/login'], function () {
-    Route::get('/', [App\Http\Controllers\TestViewController::class, 'index']);
+    Route::get('/', function () {
+        return view ('login.index');
+        });
 
 });
 
+// Route::get('/login', [\App\Http\Controllers\UsersController::class, 'index']);
+
+
 Route::group(['prefix' => '/register'], function () {
-    Route::get('/', [App\Http\Controllers\TestViewController::class, 'index1']);
+    Route::get('/', function () {
+        return view ('register.index');
+        });
 
 });
 // Router ckeditor upload
