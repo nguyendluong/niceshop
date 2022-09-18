@@ -22,5 +22,12 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt('admin@123'),
             ]
         ]);
+
+        DB::table('sizes')->insert([
+            ['name' => 'S'],
+            ['name' => 'M'],
+            ['name' => 'L'],
+            ['name' => 'XL'],    
+        ]);
     }
 }
