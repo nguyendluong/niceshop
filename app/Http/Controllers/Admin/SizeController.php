@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controller\Admin;
 
-use App\Models\Gallery;
+use App\Http\Controllers\Controller;
+use App\Models\Size;
 use Illuminate\Http\Request;
 
-class GalleryController extends Controller
+class SizeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class GalleryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gallery  $gallery
+     * @param  \App\Models\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery $gallery)
+    public function show(Size $size)
     {
         //
     }
@@ -52,10 +53,10 @@ class GalleryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gallery  $gallery
+     * @param  \App\Models\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gallery $gallery)
+    public function edit(Size $size)
     {
         //
     }
@@ -64,10 +65,10 @@ class GalleryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Gallery  $gallery
+     * @param  \App\Models\Size  $size
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, Size $size)
     {
         //
     }
@@ -75,15 +76,11 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gallery  $gallery
+     * @param  \App\Models\Size  $size
      * @return \Illuminate\Http\Response
      */
-
-    public function destroy($id)
+    public function destroy(Size $size)
     {
-        Gallery::find($id)->delete($id);
-        return response()->json([
-            'success' => 'Record deleted successfully!'
-        ]);
+        //
     }
 }
