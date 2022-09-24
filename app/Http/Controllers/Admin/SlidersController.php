@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\sliders;
 use Illuminate\Http\Request;
 
+
 class SlidersController extends Controller
 {
     public function index()
@@ -15,54 +16,45 @@ class SlidersController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        $sliders = Sliders::all();
-        return view('admin.sliders.create', compact('sliders'));   
-
+        return view('admin.sliders.create');   
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $data = $request->all();
+
+        // $validatedData = $request->validate([
+        //     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        // ]);
+
+        $filenamewithextension = $request->file('image')->getClientOriginalName();
+        $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+        $extension = $request->file('image')->getClientOriginalExtension();
+        $filenametostore = $filename.'_'.time().'.'.$extension;
+        $imageName = str_replace(' ', '_', $filenametostore);
+        $request->file('image')->storeAs('public/sliders', $imageName);
+
+        $data['path'] = '/sliders/'.$imageName;
+
         Sliders::create($data);
         toastr()->success('Create sliders successfully');
-        return redirect('admin/sliders');
+        return redirect('admin/slider');
 
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\sliders  $sliders
-     * @return \Illuminate\Http\Response
-     */
     public function show(sliders $sliders)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\sliders  $sliders
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(sliders $sliders)
+    public function edit($id)
     {
-        //
+        $slider = Sliders::findOrFail($id);
+
+        return view('admin.sliders.edit', compact('slider'));   
     }
 
     /**

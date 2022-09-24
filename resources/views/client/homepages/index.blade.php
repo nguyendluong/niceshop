@@ -3,6 +3,7 @@
 <section class="home-banner">
     <div class="container">
         <div class="home-slider owl-carousel">
+            @if (count($sliders) === 0)
             <div class="banner-bg align-flax">
                 <div class="w-100">
                     <div class="row">
@@ -15,30 +16,33 @@
                                 <h2 class="banner-title">men <span>shoes</span></h2>
                                 <p class="banner-sub">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                                     odio. Quisque volutpat mattis eros.</p>
-                                <a href="product-detail.html" class="btn">Shop now</a>
+                                <a href="/" class="btn">Shop now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @else
+            @foreach ($sliders as $slider)
             <div class="banner-bg align-flax">
                 <div class="w-100">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 align-flax">
-                            <div class="banner-img"><img src="/asset_client/images/banner-2.png" alt="banner"></div>
+                            <div class="banner-img"><img src="{{ asset('storage/'.$slider->path) }}"
+                                    alt="{{ $slider->name }}"></div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 align-flax">
                             <div class="banner-heading w-100">
-                                <label class="banner-top">Get UP To <span>40%</span> Off</label>
-                                <h2 class="banner-title">season <span>sale</span></h2>
-                                <p class="banner-sub">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                                    odio. Quisque volutpat mattis eros.</p>
-                                <a href="product-detail.html" class="btn">Shop now</a>
+                                <label style="line-height: 1" class="banner-top">{{ $slider->name }}</label>
+                                <p class="banner-sub">{{ $slider->description }}</p>
+                                <a href="{{ $slider->link }}" class="btn">Shop now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
+            @endif
         </div>
     </div>
 </section>

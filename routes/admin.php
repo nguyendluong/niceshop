@@ -78,7 +78,7 @@ Route::middleware('auth:admin')->group(function (){
         Route::delete('/delete/{id}', [GalleryController::class, 'destroy']);
     });
 
-    Route::group(['prefix' => '/sliders'], function () {
+    Route::group(['prefix' => '/slider'], function () {
         Route::get('/', [SlidersController::class, 'index']);
 
         Route::get('/create', [SlidersController::class, 'create']);
