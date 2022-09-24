@@ -15,7 +15,7 @@
                             <li>
                                 <a href="index.html">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <!-- <li class="dropdown">
                                 <span class="opener plus"></span>
                                 <a href="shop.html">Pages</a>
                                 <div class="megamenu">
@@ -29,7 +29,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                             <li class="dropdown">
                                 <span class="opener plus"></span>
                                 <a href="shop.html">Shop</a>
@@ -38,11 +38,12 @@
                                         <div class="row">
                                             @foreach($categories as $category)
                                             <div class="col-xl-3 col-lg-3 col-md-12">
-                                                <a href="/{{$category->slug}}"
+                                                <a href="/products/{{$category->slug}}"
                                                     class="megamenu-title">{{$category->name}}</a>
                                                 <ul>
                                                     @foreach($category->subcategory as $subcategory)
-                                                    <li><a href="/{{$subcategory->slug}}">{{ $subcategory->name }}</a>
+                                                    <li><a
+                                                            href="/product/{{$subcategory->slug}}">{{ $subcategory->name }}</a>
                                                     </li>
                                                     @endforeach
 
