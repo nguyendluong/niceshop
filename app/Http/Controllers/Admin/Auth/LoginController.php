@@ -13,7 +13,7 @@ class LoginController extends Controller
         if ($request->getMethod() == 'GET') {
             return view('admin.login.index');
         }
-
+        
         $credentials = $request->only(['email', 'password']);
         if (Auth::guard('admin')->attempt($credentials)) {
             return redirect()->route('admin.dashboard');

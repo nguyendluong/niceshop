@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\CKEditorController;
+use App\Http\Controllers\Admin\SlidersController;
 use Illuminate\Support\Facades\Route;
 
 Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('admin.login');
@@ -75,6 +76,22 @@ Route::middleware('auth:admin')->group(function (){
 
     Route::group(['prefix' => '/gallery'], function () {
         Route::delete('/delete/{id}', [GalleryController::class, 'destroy']);
+    });
+
+    Route::group(['prefix' => '/sliders'], function () {
+        Route::get('/', [SlidersController::class, 'index']);
+
+        Route::get('/create', [SlidersController::class, 'create']);
+        Route::post('/create', [SlidersController::class, 'store']);
+
+        Route::get('/update/{id}', [SlidersController::class, 'edit']);
+        Route::post('/update/{id}', [SlidersController::class, 'update']);
+
+        Route::get('/delete/{id}', [SlidersController::class, 'destroy']);
+    });
+    
+    Route::group(['prefix' => '/sliders'], function () {
+        Route::delete('/delete/{id}', [SlidersController::class, 'destroy']);
     });
 
     // Router ckeditor upload
