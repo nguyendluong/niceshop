@@ -51,7 +51,6 @@
                     <h2 class="hading-title">FEATURED <span>PRODUCTS</span></h2>
                 </div>
             </div>
-            {{ dd($products); }}
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <ul id="tabs" class="product-isotop filters-product text-right text-uppercase nav nav-tabs"
                     role="tablist">
