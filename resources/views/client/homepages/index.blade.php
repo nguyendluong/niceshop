@@ -13,7 +13,8 @@
                             <div class="banner-heading w-100">
                                 <label class="banner-top">Get UP To <span>40%</span> Off</label>
                                 <h2 class="banner-title">men <span>shoes</span></h2>
-                                <p class="banner-sub">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+                                <p class="banner-sub">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                                    odio. Quisque volutpat mattis eros.</p>
                                 <a href="product-detail.html" class="btn">Shop now</a>
                             </div>
                         </div>
@@ -30,7 +31,8 @@
                             <div class="banner-heading w-100">
                                 <label class="banner-top">Get UP To <span>40%</span> Off</label>
                                 <h2 class="banner-title">season <span>sale</span></h2>
-                                <p class="banner-sub">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+                                <p class="banner-sub">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                                    odio. Quisque volutpat mattis eros.</p>
                                 <a href="product-detail.html" class="btn">Shop now</a>
                             </div>
                         </div>
@@ -49,8 +51,10 @@
                     <h2 class="hading-title">FEATURED <span>PRODUCTS</span></h2>
                 </div>
             </div>
+            {{ dd($products); }}
             <div class="col-xl-6 col-lg-6 col-md-6">
-                <ul id="tabs" class="product-isotop filters-product text-right text-uppercase nav nav-tabs" role="tablist">
+                <ul id="tabs" class="product-isotop filters-product text-right text-uppercase nav nav-tabs"
+                    role="tablist">
                     <li role="presentation" class="transition" data-filter="*">
                         <a href="#all" class="active" role="tab" data-toggle="tab">all</a>
                     </li>
@@ -476,7 +480,8 @@
                                     </a>
                                 </div>
                                 <div class="seller-contain pl-15">
-                                    <a href="product-detail.html" class="product-name text-uppercase">men's harpoon 2 eye boot</a>
+                                    <a href="product-detail.html" class="product-name text-uppercase">men's harpoon 2
+                                        eye boot</a>
                                     <span class="product-pricce">$478.00</span>
                                 </div>
                             </div>
@@ -487,7 +492,8 @@
                                     </a>
                                 </div>
                                 <div class="seller-contain pl-15">
-                                    <a href="product-detail.html" class="product-name text-uppercase">BUSCIPIT AT MAGNA</a>
+                                    <a href="product-detail.html" class="product-name text-uppercase">BUSCIPIT AT
+                                        MAGNA</a>
                                     <span class="product-pricce">$478.00</span>
                                 </div>
                             </div>
@@ -495,10 +501,11 @@
                                 <div class="seller-img">
                                     <a href="product-detail.html" class="display-b">
                                         <img src="/asset_client/images/product-3.jpg" alt="shoes" class="transition">
-                                </a>
+                                    </a>
                                 </div>
                                 <div class="seller-contain pl-15">
-                                    <a href="product-detail.html" class="product-name text-uppercase">AENEAN SAGITTIS</a>
+                                    <a href="product-detail.html" class="product-name text-uppercase">AENEAN
+                                        SAGITTIS</a>
                                     <span class="product-pricce">$478.00</span>
                                 </div>
                             </div>
@@ -509,7 +516,8 @@
                                     </a>
                                 </div>
                                 <div class="seller-contain pl-15">
-                                    <a href="product-detail.html" class="product-name text-uppercase">men's harpoon 2 eye boot</a>
+                                    <a href="product-detail.html" class="product-name text-uppercase">men's harpoon 2
+                                        eye boot</a>
                                     <span class="product-pricce">$478.00</span>
                                 </div>
                             </div>
@@ -527,7 +535,8 @@
                                     </a>
                                 </div>
                                 <div class="seller-contain pl-15">
-                                    <a href="product-detail.html" class="product-name text-uppercase">ALIQUAM LOBORTIS EST</a>
+                                    <a href="product-detail.html" class="product-name text-uppercase">ALIQUAM LOBORTIS
+                                        EST</a>
                                     <span class="product-pricce">$478.00</span>
                                 </div>
                             </div>
@@ -549,7 +558,8 @@
                                     </a>
                                 </div>
                                 <div class="seller-contain pl-15">
-                                    <a href="product-detail.html" class="product-name text-uppercase">AENEAN EU TRISTIQUE</a>
+                                    <a href="product-detail.html" class="product-name text-uppercase">AENEAN EU
+                                        TRISTIQUE</a>
                                     <span class="product-pricce">$478.00</span>
                                 </div>
                             </div>
@@ -560,7 +570,8 @@
                                     </a>
                                 </div>
                                 <div class="seller-contain pl-15">
-                                    <a href="product-detail.html" class="product-name text-uppercase">BLIQUAM LOBORTIS</a>
+                                    <a href="product-detail.html" class="product-name text-uppercase">BLIQUAM
+                                        LOBORTIS</a>
                                     <span class="product-pricce">$478.00</span>
                                 </div>
                             </div>
@@ -582,7 +593,9 @@
                     <span class="quote-c"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
                 </div>
                 <div class="team-desc">
-                    <p class="member-detail">make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was make a type specimen book. It has survived not only five centuries.</p>
+                    <p class="member-detail">make a type specimen book. It has survived not only five centuries, but
+                        also the leap into electronic typesetting, remaining essentially unchanged. It was make a type
+                        specimen book. It has survived not only five centuries.</p>
                     <h3 class="member-name text-uppercase">john Doe</h3>
                 </div>
             </div>
@@ -592,7 +605,9 @@
                     <span class="quote-c"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
                 </div>
                 <div class="team-desc">
-                    <p class="member-detail">make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was make a type specimen book. It has survived not only five centuries.</p>
+                    <p class="member-detail">make a type specimen book. It has survived not only five centuries, but
+                        also the leap into electronic typesetting, remaining essentially unchanged. It was make a type
+                        specimen book. It has survived not only five centuries.</p>
                     <h3 class="member-name text-uppercase">john Doe</h3>
                 </div>
             </div>
@@ -602,7 +617,9 @@
                     <span class="quote-c"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
                 </div>
                 <div class="team-desc">
-                    <p class="member-detail">make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was make a type specimen book. It has survived not only five centuries.</p>
+                    <p class="member-detail">make a type specimen book. It has survived not only five centuries, but
+                        also the leap into electronic typesetting, remaining essentially unchanged. It was make a type
+                        specimen book. It has survived not only five centuries.</p>
                     <h3 class="member-name text-uppercase">john Doe</h3>
                 </div>
             </div>
@@ -627,9 +644,13 @@
                     </div>
                     <div class="col-xl-7 col-lg-7 col-md-7">
                         <div class="lat-blog-desc">
-                            <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>
-                            <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM</p>
-                            <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</p>
+                            <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy
+                                text of the printing and typesetting industry.</a>
+                            <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM
+                            </p>
+                            <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available,
+                                but the majority have suffered alteration in some form, by injected humour, or
+                                randomised words which don't look even</p>
                             <a href="blog-detail.html" class="btn-2">Read More</a>
                         </div>
                     </div>
@@ -644,9 +665,13 @@
                     </div>
                     <div class="col-xl-7 col-lg-7 col-md-7">
                         <div class="lat-blog-desc">
-                            <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>
-                            <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM</p>
-                            <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</p>
+                            <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy
+                                text of the printing and typesetting industry.</a>
+                            <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM
+                            </p>
+                            <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available,
+                                but the majority have suffered alteration in some form, by injected humour, or
+                                randomised words which don't look even</p>
                             <a href="blog-detail.html" class="btn-2">Read More</a>
                         </div>
                     </div>
@@ -661,9 +686,13 @@
                     </div>
                     <div class="col-xl-7 col-lg-7 col-md-7">
                         <div class="lat-blog-desc">
-                            <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>
-                            <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM</p>
-                            <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</p>
+                            <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy
+                                text of the printing and typesetting industry.</a>
+                            <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM
+                            </p>
+                            <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available,
+                                but the majority have suffered alteration in some form, by injected humour, or
+                                randomised words which don't look even</p>
                             <a href="blog-detail.html" class="btn-2">Read More</a>
                         </div>
                     </div>

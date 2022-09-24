@@ -31,7 +31,7 @@ Category
                             <tr>
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->name }}</td>
-                                <td> {{App\Http\Controllers\Admin\CategoryController::getCategoryName($category->parents_id)}}
+                                <td> {{App\Http\Controllers\Admin\CategoryController::getCategoryName($category->category_id)}}
                                 </td>
                                 @if ($category->status === 1)
                                 <td><span class="badge badge-success">Active</span></td>

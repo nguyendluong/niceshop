@@ -19,7 +19,7 @@ class CategoryController extends Controller
    
     public function create()
     {
-        $categories = Category::where('parents_id', 0)->get();
+        $categories = Category::where('category_id', 0)->get();
 
         return view('admin.category.create', compact('categories'));
     }
@@ -42,7 +42,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        $categories = Category::where('parents_id', 0)->get();
+        $categories = Category::where('category_id', 0)->get();
 
         return view('admin.category.edit', compact(['category', 'categories']));
     }
@@ -62,7 +62,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
-        $categoriesChild = Category::where('parents_id', $id)->get();
+        $categoriesChild = Category::where('category_id', $id)->get();
         if ($category['status'] === 1 || count($categoriesChild) > 0) {
             toastr()->warning('Delete category fail!');
         } else {
@@ -73,10 +73,10 @@ class CategoryController extends Controller
         return redirect('admin/category');
     }
 
-    public static function getCategoryName($parents_id)
+    public static function getCategoryName($category_id)
     {   
-        if ($parents_id != 0) {
-            $category = Category::findOrFail($parents_id);
+        if ($category_id != 0) {
+            $category = Category::findOrFail($category_id);
             return $category['name'];
         }
         

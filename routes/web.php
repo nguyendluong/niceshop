@@ -15,9 +15,10 @@ Route::get('/register', function () {
 });
 
 
-Route::get('/', function () {
-    return view('client.homepage.index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('client.home');
+// Route::get('/', function () {
+//     return view('client.homepages.index');
+// });
 
 Route::get('/client', function () {
     return view('client.homepages.index');

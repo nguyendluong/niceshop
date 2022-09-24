@@ -17,10 +17,10 @@ Create category
             <div class="form-group">
                 <div class="controls">
                     <label>Category parent</label>
-                    <select id="projectinput5" name="parents_id" class="form-control">
+                    <select id="projectinput5" name="category_id" class="form-control">
                         <option value="0">None</option>
                         @foreach ($categories as $cat)
-                        <option value="{{ $cat->id }}" @if ($cat->id ==$category->parents_id ) {{ 'selected' }} @endif>
+                        <option value="{{ $cat->id }}" @if ($cat->id ==$category->category_id ) {{ 'selected' }} @endif>
                             {{ $cat->name }}
                         </option>
                         @endforeach

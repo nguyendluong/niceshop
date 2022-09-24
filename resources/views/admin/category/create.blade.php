@@ -17,7 +17,7 @@ Create category
             <div class="form-group">
                 <div class="controls">
                     <label>Category parent</label>
-                    <select id="projectinput5" name="parents_id" class="form-control">
+                    <select id="projectinput5" name="category_id" class="form-control">
                         <option value="0">None</option>
                         @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
