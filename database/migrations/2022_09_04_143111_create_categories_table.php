@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('parents_id')->nullable();
+            $table->integer('category_id')->nullable();
             $table->string('name');
             $table->string('slug');
             $table->integer('status')->default(1);

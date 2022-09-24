@@ -36,54 +36,19 @@
                                 <div class="megamenu full">
                                     <div class="megamenu-inner">
                                         <div class="row">
-                                            <div class="col-xl-3 col-lg-3 col-md-3 display-nr">
-                                                <div class="shop-img-in">
-                                                    <div class="row">
-                                                        <div class="col-xl-12 col-lg-12 col-md-12 pb-10">
-                                                            <a href="product-detail.html" class="img-drop-bottom">
-                                                                <img src="/asset_client/images/menu.jpg"
-                                                                    class="transition" alt="img">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @foreach($categories as $category)
                                             <div class="col-xl-3 col-lg-3 col-md-12">
-                                                <a href="shop.html" class="megamenu-title">Chap Shoes</a>
+                                                <a href="/{{$category->slug}}"
+                                                    class="megamenu-title">{{$category->name}}</a>
                                                 <ul>
-                                                    <li><a href="shop.html">Hessian Shoes</a></li>
-                                                    <li><a href="shop.html">Postillion Shoes</a></li>
-                                                    <li><a href="shop.html">Cowboy Shoes</a></li>
-                                                    <li><a href="shop.html">Paddock Shoes</a></li>
-                                                    <li><a href="shop.html">Postillion Shoes</a></li>
-                                                    <li><a href="shop.html">Cowboy Shoes</a></li>
-                                                    <li><a href="shop.html">Paddock Shoes</a></li>
+                                                    @foreach($category->subcategory as $subcategory)
+                                                    <li><a href="/{{$subcategory->slug}}">{{ $subcategory->name }}</a>
+                                                    </li>
+                                                    @endforeach
+
                                                 </ul>
                                             </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-12">
-                                                <a href="shop.html" class="megamenu-title">Fashion Shoes</a>
-                                                <ul>
-                                                    <li><a href="shop.html">Opinga</a></li>
-                                                    <li><a href="shop.html">Rocker Bottom</a></li>
-                                                    <li><a href="shop.html">Clog</a></li>
-                                                    <li><a href="shop.html">Driving Moccasins</a></li>
-                                                    <li><a href="shop.html">High Heeled</a></li>
-                                                    <li><a href="shop.html">Rocker Bottom</a></li>
-                                                    <li><a href="shop.html">Clog</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-12">
-                                                <a href="shop.html" class="megamenu-title">Product Types</a>
-                                                <ul>
-                                                    <li><a href="shop.html">Hessian Shoes</a></li>
-                                                    <li><a href="shop.html">Postillion Shoes</a></li>
-                                                    <li><a href="shop.html">Cowboy Shoes</a></li>
-                                                    <li><a href="shop.html">Paddock Shoes</a></li>
-                                                    <li><a href="shop.html">Postillion Shoes</a></li>
-                                                    <li><a href="shop.html">Cowboy Shoes</a></li>
-                                                    <li><a href="shop.html">Paddock Shoes</a></li>
-                                                </ul>
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
