@@ -5,7 +5,7 @@ Sliders
 @section('content')
 <div class="row pb-2">
     <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-center">
-        <a href="/admin/sliders/create">
+        <a href="/admin/slider/create">
             <button class="btn btn-block btn-primary glow">Create Sliders</button>
         </a>
     </div>
@@ -20,31 +20,31 @@ Sliders
                             <th>id</th>
                             <th>Name</th>
                             <th>description</th>
-                            <th>link</th>
+                            <th>preview</th>
                             <th>status</th>
                             <th>edit</th>
                             <th>delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($sliders as $sliders)
+                        @foreach ($sliders as $slider)
                         <tr>
-                            <td>{{ $sliders->id }}</td>
-                            <td>{{ $sliders->name }}</td>
-                            <td>{{ $sliders->sliders_name }}</td>
-                            <td>{{ $sliders->sliders_name }}</td>
-                            @if ($sliders->status === 1)
+                            <td>{{ $slider->id }}</td>
+                            <td>{{ $slider->name }}</td>
+                            <td>{{ $slider->description }}</td>
+                            <td><img src="{{ asset('storage/'.$slider->path) }}" alt="" width="150px" /></td>
+                            @if ($slider->status === 1)
                             <td><span class="badge badge-success">Active</span></td>
                             @else
                             <td><span class="badge badge-danger">Inactive</span></td>
                             @endif
                             <td>
-                                <a href="/admin/sliders/update/{{$sliders->id}}">
+                                <a href="/admin/slider/update/{{$slider->id}}">
                                     <i class="feather icon-edit-1"></i>
                                 </a>
                             </td>
                             <td>
-                                <a href="/admin/sliders/delete/{{$sliders->id}}">
+                                <a href="/admin/slider/delete/{{$slider->id}}">
                                     <i class="feather icon-trash-2 danger"></i>
                                 </a>
                             </td>

@@ -4,7 +4,7 @@ Create sliders
 @endsection
 @section('content')
 <div class="form-product">
-    <form action="/admin/sliders/create" method="POST" enctype=" multipart/form-data">
+    <form action="/admin/slider/create" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-12 col-sm-6">
@@ -21,14 +21,35 @@ Create sliders
                         <textarea rows="3" class="form-control" placeholder="Description" name="description"></textarea>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
+                <div class="form-group">
+                    <div class="controls">
+                        <label>Link to banner</label>
+                        <input type="text" class="form-control" placeholder="Link to banner" name="link" required
+                            data-validation-required-message="This link field is required">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label>Status</label>
                     <select class="form-control" name="status">
                         <option value="1">Active</option>
                         <option value="0">Inactive</option>
                     </select>
                 </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="file" name="image" placeholder="Choose image" id="image">
+                    @error('image')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="col-md-12 mb-2">
+                <img id="preview-image-before-upload"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+                    alt="preview image" style="max-height: 250px;">
+            </div>
             <div class="col-12 d-flex flex-sm-row flex-column mt-1 group-btn">
                 <button type="submit" class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1">
                     Save</button>
@@ -36,85 +57,27 @@ Create sliders
             </div>
         </div>
     </form>
-    <div class="upload-files">
-        <div class="form-group">
-            <div class="controls">
-                <label>Sliders</label>
-                <form method="POST" action="/admin/sliders/fileStore" class="dropzone" id="upload-form">@csrf
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection
 @section('js')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-    Dropzone.options.uploadForm = {
-        renameFile: function(file) {
-            var dt = new Date();
-            var time = dt.getTime();
-            return time + file.name.replaceAll(' ', "_");
-        },
-        acceptedFiles: ".jpeg,.jpg,.png,.gif",
-        addRemoveLinks: true,
-        timeout: 50000,
-        removedfile: function(file) {
-            var name = file.upload.filename;
-            console.log(name, file, 123);
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'POST',
-                url: '{{ url("admin/sliders/deletePreview") }}',
-                data: {
-                    filename: name
-                },
-                success: function(data) {
-                    console.log("File has been successfully removed!!");
-                },
-                error: function(e) {
-                    console.log(e);
-                }
-            });
-            var _ref;
-            return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file
-                .previewElement) : void 0;
+$(document).ready(function(e) {
+    $('#image').change(function() {
+        let reader = new FileReader();
+        reader.onload = (e) => {
+            $('#preview-image-before-upload').attr('src', e.target.result);
         }
+        reader.readAsDataURL(this.files[0]);
 
-    };
+    });
+
 });
 </script>
 @endsection
 @section('css')
 <style>
-.form-product {
-    position: relative;
-}
-
-.upload-files {
-    position: absolute;
-    bottom: -225px;
-    width: 100%;
-}
-
-.dropzone {
-    width: 100%;
-    height: 185px;
-    overflow: auto;
-    width: 100%;
-    border: 1px dashed #ccd6e6;
-    padding: 10px;
-    min-height: 185px;
-}
-
-.group-btn {
-    position: absolute;
-    bottom: -275px;
-}
+//
 </style>
 @endsection

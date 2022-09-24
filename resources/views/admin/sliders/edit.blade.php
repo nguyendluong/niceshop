@@ -4,7 +4,7 @@ Create sliders
 @endsection
 @section('content')
 <div class="form-sliders">
-    <form action="/admin/sliders/update/{{ $sliders->id }}" method="POST">
+    <form action="/admin/slider/update/{{ $slider->id }}" method="POST">
         @csrf
         <div class="row">
             <div class="col-12 col-sm-6">
@@ -12,24 +12,45 @@ Create sliders
                     <div class="controls">
                         <label>Name</label>
                         <input type="text" class="form-control" placeholder="Name" name="name" required
-                            value="{{ $sliders->name }}" data-validation-required-message="This name field is required">
+                            value="{{ $slider->name }}" data-validation-required-message="This name field is required">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="controls">
                         <label>Description</label>
                         <textarea rows="3" class="form-control" placeholder="Description"
-                            name="description">{{ $sliders->description }}</textarea>
+                            name="description">{{ $slider->description }}</textarea>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
+
+                <div class="form-group">
+                    <div class="controls">
+                        <label>Link to banner</label>
+                        <input type="text" class="form-control" placeholder="Link to banner" name="link" required
+                            value="{{ $slider->link }}" data-validation-required-message="This link field is required">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label>Status</label>
                     <select class="form-control" name="status">
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
+                        <option value="1" @if ($slider->status =="1" ) {{ 'selected' }} @endif>Active</option>
+                        <option value="0" @if ($slider->status =="0" ) {{ 'selected' }} @endif>Inactive</option>
                     </select>
                 </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="file" name="image" placeholder="Choose image" id="image">
+                    @error('image')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="col-md-12 mb-2">
+                <img id="preview-image-before-upload" src="{{ asset('storage/'.$slider->path) }}" alt="preview image"
+                    style="max-height: 250px;">
+            </div>
             <div class="col-12 d-flex flex-sm-row flex-column mt-1 group-btn">
                 <button type="submit" class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1">
                     Save</button>
@@ -37,132 +58,22 @@ Create sliders
             </div>
         </div>
     </form>
-    <div class="image-preview">
-        @foreach ($images as $image)
-        <div class="preview-item" id="js-remove-file_{{$image->id}}">
-            <img src="{{ asset('storage/sliders/'.$image->path) }}" alt="" />
-            <a onClick="removeFile({{ $image->id }})">Remove file</a>
-        </div>
-        @endforeach
-    </div>
-    <div class="upload-files">
-        <div class="form-group">
-            <div class="controls">
-                <label>Sliders</label>
-                <form method="POST" action="/admin/sliders/fileUpdate/{{ $sliders->id }}" class="dropzone"
-                    id="upload-form">@csrf
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection
 @section('js')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-    Dropzone.options.uploadForm = {
-        renameFile: function(file) {
-            var dt = new Date();
-            var time = dt.getTime();
-            return time + file.name;
-        },
-        acceptedFiles: ".jpeg,.jpg,.png,.gif",
-        addRemoveLinks: true,
-        timeout: 50000,
-        removedfile: function(file) {
-            var name = file.upload.filename;
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type: 'POST',
-                url: '{{ url("admin/sliders/deletePreview") }}',
-                data: {
-                    filename: name
-                },
-                success: function(data) {
-                    console.log("File has been successfully removed!!");
-                },
-                error: function(e) {
-                    console.log(e);
-                }
-            });
-            var _ref;
-            return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file
-                .previewElement) : void 0;
+$(document).ready(function(e) {
+    $('#image').change(function() {
+        let reader = new FileReader();
+        reader.onload = (e) => {
+            $('#preview-image-before-upload').attr('src', e.target.result);
         }
-    };
+        reader.readAsDataURL(this.files[0]);
+
+    });
+
 });
 </script>
-<script>
-function removeFile(id) {
-    const idFile = 'js-remove-file_' + id;
-    var token = $("meta[name='csrf-token']").attr("content");
-
-    $.ajax({
-        url: "/admin/sliders/delete/" + id,
-        type: 'DELETE',
-        data: {
-            "id": id,
-            "_token": token,
-        },
-        success: function(data, textStatus, xhr) {
-            $(`#${idFile}`).hide();
-        },
-    });
-}
-</script>
-@endsection
-@section('css')
-<style>
-.form-sliders {
-    position: relative;
-}
-
-.upload-files {
-    position: absolute;
-    bottom: -225px;
-    width: 100%;
-}
-
-.dropzone {
-    width: 100%;
-    height: 185px;
-    overflow: auto;
-    width: 100%;
-    border: 1px dashed #ccd6e6;
-    padding: 10px;
-    min-height: 185px;
-}
-
-.group-btn {
-    position: absolute;
-    bottom: -275px;
-}
-
-.image-preview {
-    display: flex;
-    gap: 15px;
-    overflow: auto;
-}
-
-.preview-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.preview-item>img {
-    width: 120px;
-    height: 120px;
-    border-radius: 20px;
-}
-
-.dropzone .dz-message {
-    margin: 141px 0 0;
-}
-</style>
 @endsection
