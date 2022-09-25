@@ -61,396 +61,77 @@
                     <li role="presentation" class="transition" data-filter="*">
                         <a href="#all" class="active" role="tab" data-toggle="tab">all</a>
                     </li>
-                    <li role="presentation" class="transition" data-filter=".shoes">
-                        <a href="#shoes" role="tab" data-toggle="tab">Shoes</a>
+                    @foreach ($categories as $category)
+                    <li role="presentation" class="transition" data-filter=".{{$category->slug}}">
+                        <a href="#{{$category->slug}}" role="tab" data-toggle="tab">{{$category->name}}</a>
                     </li>
-                    <li role="presentation" class="transition" data-filter=".women">
-                        <a href="#women" role="tab" data-toggle="tab">Women</a>
-                    </li>
-                    <li role="presentation" class="transition" data-filter=".accessories">
-                        <a href="#accessories" role="tab" data-toggle="tab">Accessories</a>
-                    </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
         <div class="tab-content">
             <div role="tabpanel" class="row tab-pane fade active show" id="all">
+                @foreach ($all_product as $product)
                 <div class="featured-product mb-25">
                     <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-1.jpg" alt="product" class="transition">
+                        <a href="/product/{{$product->slug}}">
+                            @if (count($product->avatar) === 0)
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+                                alt="preview image" style="height: 180px; width: 100%;">
+                            @else
+                            <img src="{{ asset('storage/products/'.$product->avatar[0]->path) }}"
+                                style="height:180px; width: 100%;" alt="product" class="transition">
+                            @endif
                         </a>
                         <div class="new-label">
                             <span class="text-uppercase">New</span>
                         </div>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup mfp-iframe">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">men's harpoon 2 eye boot</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-2.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">AENEAN EU TRISTIQUE</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-3.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="sale-label">
+                        <!-- <div class="sale-label">
                             <span class="text-uppercase">sale</span>
-                        </div>
+                        </div> -->
                         <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
+                            <a href="/product/{{$product->slug}}" class="quick-popup">Quick View</a>
                         </div>
                     </div>
                     <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">AENEAN SAGITTIS</a>
-                        <span class="product-pricce">$478.00</span>
+                        <a href="/product/{{$product->slug}}" class="product-name text-uppercase">{{$product->name}}</a>
+                        <span class="product-pricce">${{$product->price}}</span>
                     </div>
                 </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-4.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">ALIQUAM LOBORTIS EST</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-5.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">AUCTOR GRAVIDA ENIM</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-6.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">BLIQUAM LOBORTIS</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-7.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="new-label">
-                            <span class="text-uppercase">New</span>
-                        </div>
-                        <div class="sale-label">
-                            <span class="text-uppercase">sale</span>
-                        </div>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">BUSCIPIT AT MAGNA</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-8.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">CONDIMENTUM POSUERE</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-9.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="new-label">
-                            <span class="text-uppercase">New</span>
-                        </div>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">DIGNISSIM VENENATIS</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-10.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">ELEIFEND ARCU</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div role="tabpanel" class="row tab-pane fade" id="shoes">
+            @foreach ($categories as $category)
+            <div role="tabpanel" class="row tab-pane fade" id="{{$category->slug}}">
+                @foreach ($category->products as $product)
                 <div class="featured-product mb-25">
                     <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-4.jpg" alt="product" class="transition">
+                        <a href="/product/{{$product->slug}}">
+                            @if (count($product->avatar) === 0)
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+                                alt="preview image" style="height: 180px; width: 100%;">
+                            @else
+                            <img src="{{ asset('storage/products/'.$product->avatar[0]->path) }}"
+                                style="height:180px; width: 100%;" alt="product" class="transition">
+                            @endif
                         </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc" data-category="accessories">
-                        <a href="product-detail.html" class="product-name text-uppercase">ALIQUAM LOBORTIS EST</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-5.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">AUCTOR GRAVIDA ENIM</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-6.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">BLIQUAM LOBORTIS</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-7.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="new-label">
+                        <!-- <div class="new-label">
                             <span class="text-uppercase">New</span>
-                        </div>
-                        <div class="sale-label">
-                            <span class="text-uppercase">sale</span>
-                        </div>
+                        </div> -->
+                        <!-- <div class="sale-label">
+                                <span class="text-uppercase">sale</span>
+                            </div> -->
                         <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
+                            <a href="/product/{{$product->slug}}" class="quick-popup">Quick View</a>
                         </div>
                     </div>
                     <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">BUSCIPIT AT MAGNA</a>
-                        <span class="product-pricce">$478.00</span>
+                        <a href="/product/{{$product->slug}}" class="product-name text-uppercase">{{$product->name}}</a>
+                        <span class="product-pricce">${{$product->price}}</span>
                     </div>
                 </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-8.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">CONDIMENTUM POSUERE</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-9.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="new-label">
-                            <span class="text-uppercase">New</span>
-                        </div>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">DIGNISSIM VENENATIS</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-10.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">ELEIFEND ARCU</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div role="tabpanel" class="row tab-pane fade" id="women">
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-3.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="sale-label">
-                            <span class="text-uppercase">sale</span>
-                        </div>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">AENEAN SAGITTIS</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-4.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc" data-category="accessories">
-                        <a href="product-detail.html" class="product-name text-uppercase">ALIQUAM LOBORTIS EST</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-5.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">AUCTOR GRAVIDA ENIM</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-6.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">BLIQUAM LOBORTIS</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-7.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="new-label">
-                            <span class="text-uppercase">New</span>
-                        </div>
-                        <div class="sale-label">
-                            <span class="text-uppercase">sale</span>
-                        </div>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">BUSCIPIT AT MAGNA</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="row tab-pane fade" id="accessories">
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-5.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">AUCTOR GRAVIDA ENIM</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-                <div class="featured-product mb-25">
-                    <div class="product-img transition mb-15">
-                        <a href="product-detail.html">
-                            <img src="/asset_client/images/product-6.jpg" alt="product" class="transition">
-                        </a>
-                        <div class="product-details-btn text-uppercase text-center transition">
-                            <a href="product-quick-view.html" class="quick-popup">Quick View</a>
-                        </div>
-                    </div>
-                    <div class="product-desc">
-                        <a href="product-detail.html" class="product-name text-uppercase">BLIQUAM LOBORTIS</a>
-                        <span class="product-pricce">$478.00</span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -466,7 +147,7 @@
     </div>
 </section>
 
-<section class="best-seller pt-100">
+<!-- <section class="best-seller pt-100">
     <div class="container">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12">
@@ -585,7 +266,7 @@
 
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="team pt-100">
     <div class="container">
@@ -637,53 +318,35 @@
                 <h2 class="hading-title">latest<span>blog</span></h2>
             </div>
             <div class="latest-blog-salid owl-carousel">
+                @foreach ($news as $new)
+
                 <div class="row align-flax pr-30">
                     <div class="col-xl-5 col-lg-5 col-md-5">
                         <div class="latest-blog-img">
-                            <a href="blog-detail.html" class="display-b">
+                            <a href="/new/{{$new->slug}}" class="display-b">
                                 <img src="/asset_client/images/blog-1.jpg" alt="blog">
                             </a>
                         </div>
                     </div>
                     <div class="col-xl-7 col-lg-7 col-md-7">
                         <div class="lat-blog-desc">
-                            <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy
-                                text of the printing and typesetting industry.</a>
+                            <a href="/new/{{$new->slug}}" class="lat-blog-title text-uppercase">{{$new->title}}</a>
                             <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM
                             </p>
                             <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available,
                                 but the majority have suffered alteration in some form, by injected humour, or
                                 randomised words which don't look even</p>
-                            <a href="blog-detail.html" class="btn-2">Read More</a>
+                            <a href="/new/{{$new->slug}}" class="btn-2">Read More</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
+
                 <div class="row align-flax pr-30">
                     <div class="col-xl-5 col-lg-5 col-md-5">
                         <div class="latest-blog-img">
                             <a href="blog-detail.html" class="display-b">
                                 <img src="/asset_client/images/blog-2.jpg" alt="blog">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-7 col-lg-7 col-md-7">
-                        <div class="lat-blog-desc">
-                            <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy
-                                text of the printing and typesetting industry.</a>
-                            <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM
-                            </p>
-                            <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available,
-                                but the majority have suffered alteration in some form, by injected humour, or
-                                randomised words which don't look even</p>
-                            <a href="blog-detail.html" class="btn-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row align-flax pr-30">
-                    <div class="col-xl-5 col-lg-5 col-md-5">
-                        <div class="latest-blog-img">
-                            <a href="blog-detail.html" class="display-b">
-                                <img src="/asset_client/images/blog-1.jpg" alt="blog">
                             </a>
                         </div>
                     </div>
