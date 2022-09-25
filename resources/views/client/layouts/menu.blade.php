@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-2 col-md-4 col-6 align-flax">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/">
                         <img alt="log" src="/asset_client/images/logo.png" class="transition">
                     </a>
                 </div>
@@ -13,7 +13,7 @@
                     <div class="menu">
                         <ul>
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="/">Home</a>
                             </li>
                             <!-- <li class="dropdown">
                                 <span class="opener plus"></span>
@@ -32,7 +32,7 @@
                             </li> -->
                             <li class="dropdown">
                                 <span class="opener plus"></span>
-                                <a href="shop.html">Shop</a>
+                                <a href="/">Shop</a>
                                 <div class="megamenu full">
                                     <div class="megamenu-inner">
                                         <div class="row">
@@ -60,9 +60,9 @@
                                 <div class="megamenu">
                                     <div class="megamenu-inner">
                                         <ul>
-                                            <li><a href="blog-left.html">Blog Left</a></li>
-                                            <li><a href="blog-right.html">Blog Right</a></li>
-                                            <li><a href="blog-detail.html">Blog Detail</a></li>
+                                            @foreach($news as $new)
+                                            <li><a href="/new/{{$new->slug}}">{{$new->title}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
