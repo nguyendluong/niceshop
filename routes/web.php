@@ -54,3 +54,4 @@ Route::get('/product', function () {
 Route::get('/product-list', function () {
     return view ('client.product-list.index');
 });
+
