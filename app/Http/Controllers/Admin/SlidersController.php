@@ -64,9 +64,14 @@ class SlidersController extends Controller
      * @param  \App\Models\sliders  $sliders
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, sliders $sliders)
+    public function update(Request $request, $id)
     {
-        //
+        $slider = Sliders::findOrFail($id);
+        $data = $request->all();
+        $slider ->update($data);
+        toastr()->success('Update sliders successfully!');
+        return redirect('admin/slider');
+        
     }
 
     /**
@@ -75,9 +80,18 @@ class SlidersController extends Controller
      * @param  \App\Models\sliders  $sliders
      * @return \Illuminate\Http\Response
      */
-    public function destroy(sliders $sliders)
+    public function destroy($id)
     {
-        //
+        $slider = Sliders::findOrFail($id);
+        if ($slider['status'] === 1) {
+            toastr()->warning('Delete slider fail!');
+        } else {
+            $slider->delete();
+            toastr()->success('Delete slider successfully!');
+        }
+        return redirect('admin/slider');
+
+
     }
     public function fileStore(Request $request)
     {
