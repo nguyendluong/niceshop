@@ -14,6 +14,9 @@ Route::middleware('auth')->group(function (){
 Route::get('/register', function () {
     return view ('register.index');
 });
+Route::get('/login', function () {
+    return view ('login.index');
+});
 
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
@@ -53,5 +56,8 @@ Route::get('/product', function () {
 
 Route::get('/product-list', function () {
     return view ('client.product-list.index');
+});
+Route::get('/contact', function () {
+    return view ('client.contact.index');
 });
 

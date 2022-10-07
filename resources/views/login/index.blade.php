@@ -45,7 +45,7 @@
                     </div>
                     <div class="new-account text-center mt-20">
                         <span>Don't have an account?</span>
-                        <a class="link" title="Create New Account" href="register.html">Create New Account</a>
+                        <a class="link" title="Create New Account" href="/register">Create New Account</a>
                     </div>
                 </form>
             </div>

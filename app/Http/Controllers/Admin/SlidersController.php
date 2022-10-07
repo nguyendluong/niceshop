@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\sliders;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class SlidersController extends Controller
@@ -86,6 +87,9 @@ class SlidersController extends Controller
         if ($slider['status'] === 1) {
             toastr()->warning('Delete slider fail!');
         } else {
+            Storage::delete('$slider');
+            // unlink(storage_path('app/public/storage'.$slider->path));
+            // Storage::disk('s3')->delete('app/public/storage'.$slider->path');
             $slider->delete();
             toastr()->success('Delete slider successfully!');
         }
