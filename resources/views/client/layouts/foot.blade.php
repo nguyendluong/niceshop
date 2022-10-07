@@ -55,11 +55,11 @@
         <div class="copy-right mt-100">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12">
-                    <p class="copyright-text">&#169; © 2022 Nice, Inc. All Rights Reserved <a href="https://templatescoder.com/" target="_blank">TemplatesCoder</a></p>
+                    <p class="copyright-text">&#169; © 2022 Nice</p>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12">
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100007980393497"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>

@@ -56,7 +56,7 @@
                             </li>
                             <li class="dropdown">
                                 <span class="opener plus"></span>
-                                <a href="blog-left.html">Blog</a>
+                                <a href="/news">Blog</a>
                                 <div class="megamenu">
                                     <div class="megamenu-inner">
                                         <ul>
@@ -68,7 +68,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="/contact">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -79,7 +79,7 @@
                     <ul class="login-cart">
                         <li>
                             <div class="login-head">
-                                <a href="login.html"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+                                <a href="/login"><i class="fa fa-user-o" aria-hidden="true"></i></a>
                             </div>
                         </li>
                         <li>

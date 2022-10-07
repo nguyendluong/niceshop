@@ -17,7 +17,8 @@
         </div>
     </div>
 </section>
-
+<form class="form-horizontal form-simple" action="/register" method="post">
+        @csrf
 <section class="login pt-100">
     <div class="container">
         <div class="billing-details">
@@ -26,6 +27,10 @@
                 <div class="form-group">
                     <label class="form-label">Full Name</label>
                     <input type="text" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">PhoneNumber</label>
+                    <input type="text" class="form-control" placeholder="Phone" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Email</label>
@@ -49,11 +54,12 @@
                 </div>
                 <div class="new-account text-center mt-20">
                     <span>Already have an account with us</span>
-                    <a class="link" title="Create New Account" href="login.html">Login Here</a>
+                    <a class="link" title="Create New Account" href="/login">Login Here</a>
                 </div>
             </form>
         </div>
     </div>
+</form>
 </section>
 @endsection
 

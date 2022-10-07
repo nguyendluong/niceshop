@@ -5,12 +5,13 @@
         <div class="page-banner-in">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-12">
-                    <h1 class="page-banner-title text-uppercase">NEWS-DETAIL</h1>
+                    <h1 class="page-banner-title text-uppercase">NEWS DETAIL</h1>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-12">
                     <ul class="right-side">
-                        <li><a href="index.html">Home</a></li>
-                        <li>News-Detail</li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/asset_client/blog-left.html">NEWS DETAIL</a></li>
+                        <li>News Detail</li>
                     </ul>
                 </div>
             </div>
@@ -21,78 +22,35 @@
 <section class="pt-100">
     <div class="container">
         <div class="row">
-            <div class="col-xl-3 col-lg-4 order-r-2">
-                <div class="blog-sidebar">
-                    <div class="blog-categories">
-                        <h2 class="blog-sidebar-title text-uppercase">Categories</h2>
-                        <ul class="Categories-blog">
-                            <li><a href="#">Creative</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Image</a></li>
-                            <li><a href="#">Photography</a></li>
-                            <li><a href="#">Travel</a></li>
-                        </ul>
-                    </div>
-
+            <div class="col-12">
+                <div class="blog-detail-img">
+                    <img src="/asset_client/images/blog-7.jpg" alt="blog">
                 </div>
-            </div>
-            <div class="col-xl-9 col-lg-8 order-r-1">
-                <div class="blog-right">
-                    <div class="row align-flax mb-30">
-                        <div class="col-xl-5 col-lg-5 col-md-5">
-                            <div class="latest-blog-img">
-                                <a href="blog-detail.html" class="display-b">
-                                    <img src="/asset_client/images/blog-4.jpg" alt="blog">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-7 col-md-7">
-                            <div class="lat-blog-desc">
-                                <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>
-                                <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM</p>
-                                <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</p>
-                                <a href="blog-detail.html" class="btn-2">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row align-flax mb-30">
-                        <div class="col-xl-5 col-lg-5 col-md-5">
-                            <div class="latest-blog-img">
-                                <a href="blog-detail.html" class="display-b">
-                                    <img src="/asset_client/images/blog-5.jpg" alt="blog">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-7 col-md-7">
-                            <div class="lat-blog-desc">
-                                <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>
-                                <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM</p>
-                                <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</p>
-                                <a href="blog-detail.html" class="btn-2">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row align-flax">
-                        <div class="col-xl-5 col-lg-5 col-md-5">
-                            <div class="latest-blog-img">
-                                <a href="blog-detail.html" class="display-b">
-                                    <img src="/asset_client/images/blog-6.jpg" alt="blog">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-7 col-md-7">
-                            <div class="lat-blog-desc">
-                                <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a>
-                                <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM</p>
-                                <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</p>
-                                <a href="blog-detail.html" class="btn-2">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="blog-detail-contain">
+                    <span>john doe - APRIL 18, 2015 AT 5.00 PM</span>
+                    <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</p>
+                    <blockquote>We possess within us two minds. So far I have written ere theronly of theewer conscious mind. within us two mind wewSo far I hheronly of theer conscious mind. within us two mind wewSo far I have only of Duis ntytonre conmind. within us two mind wew We possess within us two minds. So far I have written ere theronly of theewer conscious mind. within us two mind wewSo far I hheronly of theer conscious mind. within us two mind</blockquote>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</p>
+                    <ul>
+                        <li>Share this post:</li>
+                        <li>
+                            <a href="/asset_client/#"><i class="fa fa-facebook" title="facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="/asset_client/#"><i class="fa fa-twitter" title="twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="/asset_client/#"><i class="fa fa-instagram" title="instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="/asset_client/#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </section>
-@endsection
 
+@endsection
