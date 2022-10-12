@@ -32,7 +32,7 @@
                             </li> -->
                             <li class="dropdown">
                                 <span class="opener plus"></span>
-                                <a href="/">Shop</a>
+                                <a href="/">Product</a>
                                 <div class="megamenu full">
                                     <div class="megamenu-inner">
                                         <div class="row">
@@ -56,7 +56,7 @@
                             </li>
                             <li class="dropdown">
                                 <span class="opener plus"></span>
-                                <a href="/news">Blog</a>
+                                <a href="/news">News</a>
                                 <div class="megamenu">
                                     <div class="megamenu-inner">
                                         <ul>

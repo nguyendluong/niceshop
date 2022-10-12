@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\User\Auth\LoginController;
 use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\User\NewsController;
 use App\Http\Controllers\User\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ Route::get('/product/{slug}', [ProductController::class, 'detail'])->name('clien
 // Route::get('/', function () {
 //     return view('client.homepages.index');
 // });
+Route::get('/news/{slug}', [NewsController::class, 'detail'])->name('client.news_detail');
 
 Route::get('/client', function () {
     return view('client.homepages.index');
