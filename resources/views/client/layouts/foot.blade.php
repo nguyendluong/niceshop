@@ -1,12 +1,12 @@
 <footer class="footer pt-100">
     <div class="container">
         <div class="footer-inner">
-            <div class="footer-box">
+            <!-- <div class="footer-box">
                 <div class="footer-logo">
-                    <a href="index.html"><img src="/asset_client/images/logo.png" alt="logo"></a>
+                    <a href="/"><img src="/asset_client/images/logo.png" alt="logo"></a>
                 </div>
-                <p class="footer-desc">Lorem ipsum dolor sit amet, consectetur adipi-scing elit. In purus sem, consectetur sed aliquam vel, hendrerit in elit. Nunc interdum dolor at quam pulvinar sodales. Nunc venenatis egestas mi ac fermentum.</p>
-            </div>
+                <p class="footer-desc">Impossible is nothing</p>
+            </div> -->
             <div class="footer-box footer-static">
                 <span class="opener plus"></span>
                 <h2 class="footer-title text-uppercase">Our company</h2>
