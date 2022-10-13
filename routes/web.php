@@ -27,7 +27,7 @@ Route::get('/product/{slug}', [ProductController::class, 'detail'])->name('clien
 // Route::get('/', function () {
 //     return view('client.homepages.index');
 // });
-Route::get('/news/{slug}', [NewsController::class, 'detail'])->name('client.news_detail');
+Route::get('/new/{slug}', [NewsController::class, 'detail'])->name('client.news_detail');
 
 Route::post('/sign-up', [UsersController::class, 'signUp']);
 
@@ -65,4 +65,3 @@ Route::get('/product-list', function () {
 Route::get('/contact', function () {
     return view ('client.contact.index');
 });
-

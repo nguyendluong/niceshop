@@ -33,6 +33,7 @@
 				});
 		    /* ------------ Newslater-popup JS End ------------- */
     </script>
+    @yield('js')
     @yield('css')
 
 </body>
