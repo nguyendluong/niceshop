@@ -11,12 +11,12 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if ($request->getMethod() == 'GET') {
-            return view('user.auth.login');
+            return view('login.index');
         }
 
         $credentials = $request->only(['email', 'password']);
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home');
+            return redirect()->route('client.home');
         } else {
             return redirect()->back()->withInput();
         }
