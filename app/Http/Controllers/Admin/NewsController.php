@@ -30,6 +30,16 @@ class NewsController extends Controller
         $data = $request->all();
         $data['slug'] = Str::slug($data['title']);
         $checkNews = News::where('slug', '=', $data['slug'] )->get();
+
+        $filenamewithextension = $request->file('image')->getClientOriginalName();
+        $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+        $extension = $request->file('image')->getClientOriginalExtension();
+        $filenametostore = $filename.'_'.time().'.'.$extension;
+        $imageName = str_replace(' ', '_', $filenametostore);
+        $request->file('image')->storeAs('public/news', $imageName);
+
+        $data['avatar'] = '/news/'.$imageName;
+
         if (count($checkNews) > 0) {
             toastr()->error('Duplicate title! Please reinput news');
             return redirect('admin/news/create');
@@ -58,6 +68,7 @@ class NewsController extends Controller
     {
         $news = News::findOrFail($id);
         $data = $request->all();
+        // dd($data);
         $news ->update($data);
         toastr()->success('Update news successfully!');
         return redirect('admin/news');

@@ -324,45 +324,19 @@
                     <div class="col-xl-5 col-lg-5 col-md-5">
                         <div class="latest-blog-img">
                             <a href="/new/{{$new->slug}}" class="display-b">
-                                <img src="/asset_client/images/blog-1.jpg" alt="blog">
+                                <img src="{{ asset('storage/'.$new->avatar) }}" alt="{{$new->title}}">
                             </a>
                         </div>
                     </div>
                     <div class="col-xl-7 col-lg-7 col-md-7">
                         <div class="lat-blog-desc">
                             <a href="/new/{{$new->slug}}" class="lat-blog-title text-uppercase">{{$new->title}}</a>
-                            <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM
-                            </p>
-                            <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available,
-                                but the majority have suffered alteration in some form, by injected humour, or
-                                randomised words which don't look even</p>
+                            <p class="lat-blog-detail">{{$new->description}}</p>
                             <a href="/new/{{$new->slug}}" class="btn-2">Read More</a>
                         </div>
                     </div>
                 </div>
                 @endforeach
-
-                <div class="row align-flax pr-30">
-                    <div class="col-xl-5 col-lg-5 col-md-5">
-                        <div class="latest-blog-img">
-                            <a href="blog-detail.html" class="display-b">
-                                <img src="/asset_client/images/blog-2.jpg" alt="blog">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-7 col-lg-7 col-md-7">
-                        <div class="lat-blog-desc">
-                            <a href="blog-detail.html" class="lat-blog-title text-uppercase">Lorem Ipsum is simply dummy
-                                text of the printing and typesetting industry.</a>
-                            <p class="lat-blog-date text-uppercase"><span>john doe</span> - APRIL 18, 2015 AT 5.00 PM
-                            </p>
-                            <p class="lat-blog-detail">There are many variations of passages of Lorem Ipsum available,
-                                but the majority have suffered alteration in some form, by injected humour, or
-                                randomised words which don't look even</p>
-                            <a href="blog-detail.html" class="btn-2">Read More</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -371,4 +345,20 @@
 <div class="top-scrolling">
     <a href="#main" class="scrollTo"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 </div>
+@endsection
+@section('css')
+<style>
+.latest-blog-img {
+    height: 180px;
+    padding: 4px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 5px 10px #eee;
+    margin-bottom: 10px;
+}
+</style>
 @endsection
