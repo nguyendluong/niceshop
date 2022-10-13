@@ -3,17 +3,18 @@
 News
 @endsection
 @section('content')
-<form action="/admin/news/create" method="POST">
+<form action="/admin/news/create" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <fieldset class="form-group">
             <label for="basicInput">Title news</label>
-            <input type="text" name="title" class="form-control" id="basicInput">
+            <input type="text" name="title" class="form-control" id="basicInput" required>
         </fieldset>
         <div class="form-group">
             <div class="controls">
                 <label>Description</label>
-                <textarea rows="3" class="form-control" placeholder="Description" name="description"></textarea>
+                <textarea rows="3" class="form-control" placeholder="Description" name="description"
+                    required></textarea>
             </div>
         </div>
         <fieldset class="form-group">

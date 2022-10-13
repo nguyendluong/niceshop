@@ -68,6 +68,7 @@ class NewsController extends Controller
     {
         $news = News::findOrFail($id);
         $data = $request->all();
+        // dd($data);
         $news ->update($data);
         toastr()->success('Update news successfully!');
         return redirect('admin/news');

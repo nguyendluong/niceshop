@@ -3,7 +3,7 @@
 Edit News
 @endsection
 @section('content')
-<form action="/admin/news/update/{{ $news->id }}" method="POST">
+<form action="/admin/news/update/{{ $news->id }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <fieldset class="form-group">
@@ -14,7 +14,7 @@ Edit News
         <div class="form-group">
             <div class="controls">
                 <label>Description</label>
-                <textarea rows="3" class="form-control" placeholder="Description"
+                <textarea rows="3" required class="form-control" placeholder="Description"
                     name="description">{{ $news->description }}</textarea>
             </div>
         </div>
