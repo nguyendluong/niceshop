@@ -1,11 +1,11 @@
 <head>
-<!-- Basic Page Needs -->
-<meta charset="utf-8">
-<title>NICE</title>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>NICE</title>
 
-<!-- Mobile Specific Metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link type="image/x-icon" href="/asset_client/images/fav-icon.png" rel="icon">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link type="image/x-icon" href="/asset_client/images/fav-icon.png" rel="icon">
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="asset_client/css/font-awesome.min.css">
