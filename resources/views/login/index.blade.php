@@ -24,19 +24,19 @@
         <div class="container">
             <div class="billing-details">
                 <h2 class="checkout-title text-uppercase text-center mb-30">LOGIN</h2>
-                <form class="checkout-form">
+                <form id="loginForm" class="checkout-form">
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="text" class="form-control" placeholder="Email" required>
+                        <input id="email" type="text" class="form-control" placeholder="Email" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter your Password" required>
+                        <input id="password" type="password" class="form-control" placeholder="Enter your Password" required>
                     </div>
                     <div class="login-btn-g">
                         <div class="row">
                             <div class="col-6">
-                                <button name="submit" type="submit" class="btn btn-color right-side">Log In</button>
+                                <button  name="submit" type="submit" class="btn btn-color right-side">Log In</button>
                             </div>
                         </div>
                     </div>
@@ -53,5 +53,6 @@
     </section>
 </form>
 @endsection
-
+@section('js')
+@endsection
 
