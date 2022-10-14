@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\User\Auth\LoginController;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\NewsController;
@@ -13,20 +14,42 @@ Route::middleware('auth')->group(function (){
     // Router with authentication example /cart, /payment, /my-order,...
 });
 
-Route::get('/register', function () {
-    return view ('register.index');
+
+
+Route::group(['prefix' => '/admin' , 'middleware' => 'AdminMiddleware'] , function () {
+    Route::get('/test', [UsersController::class, 'test']);
 });
-Route::get('/login', function () {
-    return view ('login.index');
+
+
+
+Route::group(['prefix' => '/client' , 'middleware' => 'UsersMiddleware'] , function () {
+    Route::get('/test', [UsersController::class, 'test']);
+
+    //contact\
+    //add-to-card
+    //bill
+
 });
+
+
+
+Route::get('/login', [\App\Http\Controllers\User\UsersController::class, 'viewAuth']);
+Route::get('/register', [\App\Http\Controllers\User\UsersController::class, 'viewregister']);
+Route::post('/register', [\App\Http\Controllers\User\UsersController::class, 'register']);
+Route::post('/login', [\App\Http\Controllers\User\UsersController::class, 'login']);
+Route::get('/logout', [\App\Http\Controllers\User\UsersController::class, 'logout']);
+
+Route::post('/login' , [UsersController::class , 'actionLogin']);
+
+
+
+
 
 
 Route::get('/', [HomeController::class, 'index'])->name('client.home');
 Route::get('/products/{cat_slug}', [ProductController::class, 'list'])->name('client.product_list');
 Route::get('/product/{slug}', [ProductController::class, 'detail'])->name('client.product_detail');
-// Route::get('/', function () {
-//     return view('client.homepages.index');
-// });
+
 Route::get('/news/{slug}', [NewsController::class, 'detail'])->name('client.news_detail');
 
 Route::post('/sign-up', [UsersController::class, 'signUp']);
@@ -38,6 +61,7 @@ Route::get('/client', function () {
 Route::get('/cart', function () {
     return view ('client.cart.index');
 });
+//Ví dụ
 
 Route::get('/news', function () {
     return view ('client.news.index');
@@ -65,4 +89,8 @@ Route::get('/product-list', function () {
 Route::get('/contact', function () {
     return view ('client.contact.index');
 });
-
+Route::group(['prefix' => '/contact'], function () {
+    Route::get('/', [ContactController::class, 'index']);
+    Route::get('/create', [ContactController::class, 'create']);
+    Route::post('/create', [ContactController::class, 'store']);
+});
