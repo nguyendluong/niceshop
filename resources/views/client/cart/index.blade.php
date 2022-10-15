@@ -26,6 +26,7 @@
                     <thead>
                         <tr>
                             <th>Product</th>
+                            <th>Size</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Sub Total</th>
@@ -33,66 +34,47 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($existOrder as $order)
+
+                        @foreach ($order->productOrders as $productOrder)
                         <tr>
                             <td class="text-left">
                                 <div class="seller-box align-flax w-100">
                                     <div class="seller-img">
-                                        <a href="product-detail.html" class="display-b">
-                                            <img src="/asset_client/images/product-1.jpg" alt="shoes" class="transition">
+                                        <a href="/product/{{$productOrder->productDetail->slug}}" class="display-b">
+                                            @if (count($productOrder->productDetail->avatar) === 0)
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+                                                alt="preview image" style="height: 180px; width: 100%;">
+                                            @else
+                                            <img src="{{ asset('storage/products/'.$productOrder->productDetail->avatar[0]->path) }}"
+                                                style="height:75px; width: 100%;" alt="product" class="transition">
+                                            @endif
                                         </a>
                                     </div>
                                     <div class="seller-contain pl-15">
-                                        <a href="product-detail.html" class="product-name text-uppercase">men's harpoon 2 eye boot</a>
+                                        <a href="/product/{{$productOrder->productDetail->slug}}"
+                                            class="product-name text-uppercase">{{$productOrder->productDetail->name}}</a>
                                     </div>
                                 </div>
                             </td>
-                            <td><span class="price">$70.00</span></td>
+                            <td><span class="price">{{$productOrder->sizeName->name}}</span></td>
+                            <td><span class="price">${{$productOrder->productDetail->price}}</span></td>
                             <td>
-                                <select data-id="100" class="quantity_cart" name="quantity_cart">
-                                        <option selected="" value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                </select>
+                                <input style="width: 70px; margin: auto;" type="number" class="form-control"
+                                    value="{{$productOrder->quantity}}" />
                             </td>
-                            <td><span class="price">$70.00</span></td>
+                            <td><span class="price">${{$productOrder->quantity * $productOrder->price}}</span></td>
                             <td>
                                 <ul>
-                                    <li><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                    <li><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                                    </li>
                                     <li><a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="text-left">
-                                <div class="seller-box align-flax w-100">
-                                    <div class="seller-img">
-                                        <a href="product-detail.html" class="display-b">
-                                            <img src="/asset_client/images/product-2.jpg" alt="shoes" class="transition">
-                                        </a>
-                                    </div>
-                                    <div class="seller-contain pl-15">
-                                        <a href="product-detail.html" class="product-name text-uppercase">Dignissim Venenatis</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><span class="price">$80.00</span></td>
-                            <td>
-                                <select data-id="100" class="quantity_cart" name="quantity_cart">
-                                        <option value="1">1</option>
-                                        <option selected="" value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                </select>
-                            </td>
-                            <td><span class="price">$160.00</span></td>
-                            <td>
-                                <ul>
-                                    <li><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </td>
-                        </tr>
+                        @endforeach
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>
@@ -154,34 +136,35 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>Item(s) Subtotal</td>
-                                                <td>
+                                            <td>Item(s) Subtotal</td>
+                                            <td>
                                                 <div class="price-box">
-                                                        <span class="price">$160.00</span>
+                                                    <span class="price">$160.00</span>
                                                 </div>
-                                                </td>
+                                            </td>
                                         </tr>
                                         <tr>
-                                                <td>Shipping</td>
-                                                <td>
+                                            <td>Shipping</td>
+                                            <td>
                                                 <div class="price-box">
-                                                        <span class="price">$0.00</span>
+                                                    <span class="price">$0.00</span>
                                                 </div>
-                                                </td>
+                                            </td>
                                         </tr>
-                                            <tr>
-                                                <td class="payable"><b>Amount Payable</b></td>
-                                                <td>
+                                        <tr>
+                                            <td class="payable"><b>Amount Payable</b></td>
+                                            <td>
                                                 <div class="price-box">
-                                                        <span class="price">$160.00</span>
+                                                    <span class="price">$160.00</span>
                                                 </div>
-                                                </td>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="share-wishlist">
-                                <a href="checkout.html" class="btn btn-color">Payment<i class="fa fa-angle-right"></i></a>
+                                <a href="checkout.html" class="btn btn-color">Payment<i
+                                        class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>

@@ -67,6 +67,7 @@
                                     <ul>
                                         <li>
                                             <a href="#" id="js-add-card" class="btn btn-color">
+                                                <input type="hidden" id="js-data-productId" value="{{$product->id}}" />
                                                 <img src="/asset_client/images/shop-bag.png" alt="bag">
                                                 <span>Add to cart</span>
                                             </a>
@@ -94,10 +95,28 @@ $(document).ready(function() {
     });
 
     $('#js-add-card').click(() => {
+        const productId = $('#js-data-productId').val();
         const quantity = $('#js-data-quantity').val();
-        console.log(quantity, 'quantity');
         const size = $('#js-data-size').find(":selected").val();
         console.log(size, 'size');
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
+            url: '{{ url("/add-to-cart") }}',
+            data: {
+                size: size,
+                quantity: quantity,
+                productId: productId
+            },
+            success: function(data) {
+                window.location = data.redirect_url;
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
         // TODO handle ajax cart
     })
 });

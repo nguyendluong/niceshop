@@ -16,4 +16,6 @@
     <link rel="stylesheet" type="text/css" href="/asset_client/css/glass-case.css">
     <link rel="stylesheet" type="text/css" href="/asset_client/css/shoes.css">
     <link rel="stylesheet" type="text/css" href="/asset_client/css/responsive.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>

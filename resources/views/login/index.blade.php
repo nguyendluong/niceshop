@@ -1,25 +1,25 @@
 @extends('client.layouts.master')
 @section('content')
-    <section class="page-banner">
-        <div class="container">
-            <div class="page-banner-in">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-12">
-                        <h1 class="page-banner-title text-uppercase">Login</h1>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-12">
-                        <ul class="right-side">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Login</li>
-                        </ul>
-                    </div>
+<section class="page-banner">
+    <div class="container">
+        <div class="page-banner-in">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-12">
+                    <h1 class="page-banner-title text-uppercase">Login</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-12">
+                    <ul class="right-side">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Login</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <form class="form-horizontal form-simple" action="/login" method="post">
-        @csrf
+<form class="form-horizontal form-simple" action="/login" method="post">
+    @csrf
     <section class="login pt-100">
         <div class="container">
             <div class="billing-details">
@@ -27,11 +27,12 @@
                 <form class="checkout-form">
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="text" class="form-control" placeholder="Email" required>
+                        <input type="text" class="form-control" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter your Password" required>
+                        <input type="password" class="form-control" name="password" placeholder="Enter your Password"
+                            required>
                     </div>
                     <div class="login-btn-g">
                         <div class="row">
@@ -41,7 +42,8 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <a title="Forgot Password" class="link forgot-password mtb-20" href="#">Forgot your password?</a>
+                        <a title="Forgot Password" class="link forgot-password mtb-20" href="#">Forgot your
+                            password?</a>
                     </div>
                     <div class="new-account text-center mt-20">
                         <span>Don't have an account?</span>
@@ -53,5 +55,3 @@
     </section>
 </form>
 @endsection
-
-

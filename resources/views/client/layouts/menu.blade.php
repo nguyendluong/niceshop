@@ -1,3 +1,4 @@
+<? use Illuminate\Support\Facades\Auth; ?>
 <header class="header transition">
     <div class="container position-r">
         <div class="row">
@@ -73,15 +74,25 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="search-right">
                     <div class="menu-toggle"><span></span></div>
 
                     <ul class="login-cart">
                         <li>
+                            @if(Auth::guard('web')->check())
+                            <div class="login-head">
+                                <a href="/logout"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+                            </div>
+                            <!-- {{ Auth::guard('web')->user()->name  }}  -->
+                            @else
                             <div class="login-head">
                                 <a href="/login"><i class="fa fa-user-o" aria-hidden="true"></i></a>
                             </div>
+                            @endif
+
                         </li>
+                        @if(Auth::guard('web')->check())
                         <li>
                             <div class="cart-menu">
                                 <div class="cart-icon position-r">
@@ -147,6 +158,8 @@
                                 </div>
                             </div>
                         </li>
+                        @endif
+
                     </ul>
                 </div>
             </div>
