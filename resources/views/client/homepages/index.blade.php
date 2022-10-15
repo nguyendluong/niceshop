@@ -89,9 +89,9 @@
                         <!-- <div class="sale-label">
                             <span class="text-uppercase">sale</span>
                         </div> -->
-                        <div class="product-details-btn text-uppercase text-center transition">
+                        <!-- <div class="product-details-btn text-uppercase text-center transition">
                             <a href="/product/{{$product->slug}}" class="quick-popup">Quick View</a>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="product-desc">
                         <a href="/product/{{$product->slug}}" class="product-name text-uppercase">{{$product->name}}</a>

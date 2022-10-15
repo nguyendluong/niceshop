@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 use App\Models\News;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
