@@ -18,6 +18,7 @@ class Order extends Model
         'total',
         'paymentMethod',
         'note',
+        'address',
         'status',
     ];
 }

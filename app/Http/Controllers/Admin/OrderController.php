@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -16,7 +17,9 @@ class OrderController extends Controller
     public function index()
     {
 
-        return view('client.cart.index');
+        $users = User::all();
+
+        return view('admin.users.index', compact('users'));   
 
     }
 

@@ -8,7 +8,10 @@ use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\CKEditorController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\SlidersController;
+use App\Http\Controllers\User\UsersController;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('admin.login');
@@ -40,6 +43,13 @@ Route::middleware('auth:admin')->group(function (){
         Route::post('/update/{id}', [newsController::class, 'update']);
 
         Route::get('/delete/{id}', [NewsController::class, 'destroy']);
+    });
+
+    Route::group(['prefix' => '/users'], function () {
+        Route::get('/', [UsersController::class, 'index']);
+    });
+    Route::group(['prefix' => '/orders'], function () {
+        Route::get('/', [OrderController::class, 'index']);
     });
 
 

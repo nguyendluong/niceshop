@@ -50,7 +50,7 @@
                                     <label>Qty:</label>
                                     <div class="fill-input">
                                         <input type="number" id="js-data-quantity" class="input-text qty" value="1"
-                                            min="1" max="3" />
+                                            />
                                     </div>
                                 </div>
                                 <div class="table-listing qty">

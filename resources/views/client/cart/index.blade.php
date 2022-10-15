@@ -121,7 +121,7 @@
                                                 <td>Item(s)</td>
                                                 <td>
                                                     <div class="price-box">
-                                                        <span class="price">${{count($existOrder) + 1}}</span>
+                                                        <span class="price">${{count($existOrder)}}</span>
                                                     </div>
                                                 </td>
                                             </tr>
