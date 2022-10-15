@@ -29,7 +29,7 @@
                                   <img src="/assets_admin/app-assets/images/portrait/small/avatar-s-1.png"
                                       alt="avatar"><i></i>
                               </div>
-                              <span class="user-name">John Doe</span>
+                              <span class="user-name">Admin</span>
                           </a>
                           <div class="dropdown-menu dropdown-menu-right">
                               {{-- <a class="dropdown-item" href="user-profile.html">

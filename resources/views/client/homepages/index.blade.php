@@ -136,7 +136,7 @@
     </div>
 </section>
 
-<section class="offer-banner pt-70">
+<!-- <section class="offer-banner pt-70">
     <div class="container">
         <div class="offer-bg bg text-center ptb-120">
             <label class="banner-top text-uppercase">PROMOTION SALE <span>OFF 50%</span></label>
@@ -145,7 +145,7 @@
             <a href="product-detail.html" class="btn">Shop now</a>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- <section class="best-seller pt-100">
     <div class="container">
@@ -268,7 +268,7 @@
     </div>
 </section> -->
 
-<section class="team pt-100">
+<!-- <section class="team pt-100">
     <div class="container">
         <div class="team-inner owl-carousel">
             <div class="team-slide text-center">
@@ -309,7 +309,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="latest-blog pt-100">
     <div class="container">

@@ -27,5 +27,13 @@
                     <i class="feather icon-book"></i>
                     <span class="menu-title" data-i18n="Sliders">Sliders</span></a>
             </li>
+            <li class="nav-item {{str_contains($routeName, 'users') ? 'active' : ''}}"><a href=" /admin/users">
+                    <i class="feather icon-book"></i>
+                    <span class="menu-title" data-i18n="Users">Users</span></a>
+            </li>
+            <li class="nav-item {{str_contains($routeName, 'Orders') ? 'active' : ''}}"><a href=" /admin/orders">
+                    <i class="feather icon-book"></i>
+                    <span class="menu-title" data-i18n="Orders">Order</span></a>
+            </li>
     </div>
 </div>

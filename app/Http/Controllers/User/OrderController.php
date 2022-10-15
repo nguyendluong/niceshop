@@ -50,6 +50,8 @@ class OrderController extends Controller
             $order['paymentMethod'] = 0;
             $order['note'] = '';
             $order['status'] = 0;
+            $order['address'] = '';
+
     
             $orderId = Order::create($order)->id; 
             // Handle product order
