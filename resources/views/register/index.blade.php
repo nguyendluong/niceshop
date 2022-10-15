@@ -17,7 +17,7 @@
         </div>
     </div>
 </section>
-<form class="form-horizontal form-simple" action="/register" method="post">
+<form class="form-horizontal form-simple" action="/signUp" method="post">
         @csrf
 <section class="login pt-100">
     <div class="container">
@@ -26,22 +26,25 @@
             <form class="checkout-form">
             <div class="form-group">
                     <label class="form-label">Email</label>
-                    <input id="email" type="text" class="form-control" name="email" placeholder="Email" required>
+                    <input type="text" class="form-control" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Password</label>
-                    <input id="password" type="password" name="password" class="form-control" placeholder="Enter your Password" required>
+                    <input type="password" name="password" class="form-control" placeholder="Enter your Password" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Full Name</label>
-                    <input id="name" type="text" name="name" class="form-control" placeholder="Name" required>
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Phone</label>
-                    <input id="" type="text" name="phone" class="form-control" placeholder="Phone" required>
+                    <label class="form-label">PhoneNumber</label>
+                    <input type="text" name="phone" class="form-control" placeholder="Phone" required>
                 </div>
-
-
+                
+                <!-- <div class="form-group">
+                    <label class="form-label">Re-enter Password</label>
+                    <input type="password" class="form-control" placeholder="Re-enter Password" required>
+                </div> -->
                 <div class="login-btn-g">
                     <div class="row">
 
@@ -59,9 +62,5 @@
     </div>
 </form>
 </section>
-@endsection
-
-@section('js')
-
 @endsection
 
