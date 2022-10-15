@@ -54,37 +54,34 @@
                     </ul>
                 </div>
             </div>
-            <form action="/contact/create" method="POST" enctype=" multipart/form-data">
-                @csrf
-                <div class="col-md-8">
-                    <div class="contact-form-detail">
-                        <h2 class="contact-head text-uppercase">LEAVE A MESSAGE</h2>
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name='mess_name'  class="form-control" placeholder="Name*" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name='mess_email' class="form-control" placeholder="Your Email*" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name='mess_phone' class="form-control" placeholder="Phone*" required>
-                                    </div>
+            <div class="col-md-8">
+                <div class="contact-form-detail">
+                    <h2 class="contact-head text-uppercase">LEAVE A MESSAGE</h2>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Name*" required>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <textarea class="form-control" name='mess' placeholder="Message"></textarea>
-                                    </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Email*" required>
                                 </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-color">submit form</button>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Phone*" required>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-color">submit form</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </section>
