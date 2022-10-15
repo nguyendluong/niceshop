@@ -76,13 +76,18 @@ class OrderController extends Controller
     {
         $user = Auth::guard('web')->user();
         $existOrder = Order::where('userId', $user->id)->where('status' , 0)->get();
-       
+        $total = 0;
         foreach ($existOrder as $order) {
             $order['productOrders'] = self::getProductFromOrderId($order);
-
+            $total = $total + $order['total'];
         }
 
-        return view('client.cart.index', compact('existOrder'));
+        return view('client.cart.index', compact('existOrder', 'total'));
+    }
+
+    public function updateQuantityOrder(Request $request)
+    {
+        return response()->json(['status'=>true,"total"=>$total, 'summary', $summary]);
     }
 
     public static function getProductFromOrderId($order)
@@ -113,5 +118,21 @@ class OrderController extends Controller
     {
         $galleries = Gallery::where('product_id', $product_id)->get();
         return $galleries;
+    }
+
+    public function checkout(Request $request)
+    {
+        $user = Auth::guard('web')->user();
+        $orders  = Order::where('userId', $user->id)->where('status' , 0)->get();
+        foreach ($orders as $order) {
+            Order::where('userId', $user->id)->where('status' , 0)->where('id', $order->id)
+                ->update(['status' => 1, 'note' => $request->note, 'address'=> $request->address]);
+            
+        }
+
+        toastr()->success('Your order submit successfully');
+       
+        return redirect('/');
+
     }
 }
