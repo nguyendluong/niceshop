@@ -34,19 +34,12 @@ Route::post('/sign-up', [UsersController::class, 'signUp']);
 
 Route::post('/add-to-cart', [OrderController::class, 'addToCart'])->name('client.add_to_card');
 Route::get('/cart', [OrderController::class, 'cart'])->name('client.cart');
-
-
-
-
-//
+Route::get('/update-quantity', [OrderController::class, 'updateQuantityOrder'])->name('client.updateQuantityOrder');
+Route::post('/checkout', [OrderController::class, 'checkout'])->name('client.checkout');
 
 Route::get('/client', function () {
     return view('client.homepages.index');
 });
-
-// Route::get('/cart', function () {
-//     return view ('client.cart.index');
-// });
 
 Route::get('/news', function () {
     return view ('client.news.index');

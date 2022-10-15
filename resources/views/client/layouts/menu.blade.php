@@ -94,69 +94,14 @@
                         </li>
                         @if(Auth::guard('web')->check())
                         <li>
-                            <div class="cart-menu">
-                                <div class="cart-icon position-r">
-                                    <img src="/asset_client/images/car-icon-w.png" class="position-r transition"
-                                        alt="cart">
-                                </div>
-                                <div class="cart-dropdown header-link-dropdown">
-                                    <ul class="cart-list link-dropdown-list">
-                                        <li>
-                                            <a href="javascript:void(0)" class="close-cart"><i
-                                                    class="fa fa-times-circle"></i></a>
-                                            <figure>
-                                                <a href="product-detail.html" class="pull-left">
-                                                    <img alt="product" src="/asset_client/images/product-1.jpg">
-                                                </a>
-                                                <figcaption>
-                                                    <span>
-                                                        <a href="product-detail.html">Men's Full Sleeves Collar
-                                                            Shirt</a>
-                                                    </span>
-                                                    <p class="cart-price">$14.99</p>
-                                                    <div class="product-qty">
-                                                        <label>Qty:</label>
-                                                        <div class="custom-qty">
-                                                            <input type="text" name="qty" maxlength="8" value="1"
-                                                                title="Qty" class="input-text qty" disabled>
-                                                        </div>
-                                                    </div>
-                                                </figcaption>
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <a class="close-cart"><i class="fa fa-times-circle"></i></a>
-                                            <figure>
-                                                <a href="product-detail.html" class="pull-left">
-                                                    <img alt="product" src="/asset_client/images/product-2.jpg">
-                                                </a>
-                                                <figcaption>
-                                                    <span>
-                                                        <a href="product-detail.html">Women's Cape Jacket</a>
-                                                    </span>
-                                                    <p class="cart-price">$14.99</p>
-                                                    <div class="product-qty">
-                                                        <label>Qty:</label>
-                                                        <div class="custom-qty">
-                                                            <input type="text" name="qty" maxlength="8" value="1"
-                                                                title="Qty" class="input-text qty" disabled>
-                                                        </div>
-                                                    </div>
-                                                </figcaption>
-                                            </figure>
-                                        </li>
-                                    </ul>
-                                    <p class="cart-sub-totle">
-                                        <span class="pull-left">Cart Subtotal</span>
-                                        <span class="pull-right"><strong class="price-box">$29.98</strong></span>
-                                    </p>
-                                    <div class="clearfix"></div>
-                                    <div class="mt-20">
-                                        <a href="cart.html" class="btn">Cart</a>
-                                        <a href="checkout.html" class="btn btn-color right-side">Checkout</a>
+                            <a href="/cart">
+                                <div class="cart-menu">
+                                    <div class="cart-icon position-r">
+                                        <img src="/asset_client/images/car-icon-w.png" class="position-r transition"
+                                            alt="cart">
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         @endif
 
