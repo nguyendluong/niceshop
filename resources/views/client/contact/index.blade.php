@@ -30,7 +30,7 @@
                             </div>
                             <div class="contact-box-detail">
                                 <h2 class="contact-title text-uppercase">ADDRESS</h2>
-                                <p>03 Quang Trung Street, Thanh Binh Ward, Hai Chau District, Da Nang City, VietNamese.</p>
+                                <p>DLG building, Da Nang City, VietNamese.</p>
                             </div>
                         </li>
                         <li>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="contact-box-detail">
                                 <h2 class="contact-title text-uppercase">Email</h2>
-                                <a href="mailto:expoge@exmaple.com">nice@gmail.com, nguyentttam51@gmail.com.com</a>
+                                <a href="mailto:expoge@exmaple.com">nice.dlg.ad@gmail.com</a>
                             </div>
                         </li>
                         <li>
@@ -48,40 +48,43 @@
                             </div>
                             <div class="contact-box-detail">
                                 <h2 class="contact-title text-uppercase">Phone</h2>
-                                <a href="tel:(+84) 974760930">(+84) 974760930</a>
+                                <a href="tel:(+84) 845045468">(+84) 845045468</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="contact-form-detail">
-                    <h2 class="contact-head text-uppercase">LEAVE A MESSAGE</h2>
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Name*" required>
+            <form action="/contact/create" method="POST" enctype=" multipart/form-data">
+                @csrf
+                <div class="col-md-8">
+                    <div class="contact-form-detail">
+                        <h2 class="contact-head text-uppercase">LEAVE A MESSAGE</h2>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" name='mess_name'  class="form-control" placeholder="Name*" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name='mess_email' class="form-control" placeholder="Your Email*" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name='mess_phone' class="form-control" placeholder="Phone*" required>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Email*" required>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name='mess' placeholder="Message"></textarea>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Phone*" required>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-color">submit form</button>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Message"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-color">submit form</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>

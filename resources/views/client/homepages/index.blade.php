@@ -52,7 +52,7 @@
         <div class="row mb-25">
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="hading">
-                    <h2 class="hading-title">FEATURED <span>PRODUCTS</span></h2>
+                    <h2 class="hading-title"> <span>PRODUCTS</span></h2>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6">

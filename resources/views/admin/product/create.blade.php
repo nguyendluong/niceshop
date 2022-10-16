@@ -45,7 +45,7 @@ Create product
                 <div class="form-group">
                     <div class="controls">
                         <label>Description</label>
-                        <textarea rows="3" class="form-control" placeholder="Description" name="description"></textarea>
+                        <textarea rows="6" class="form-control" placeholder="Description" name="description"></textarea>
                     </div>
                 </div>
             </div>
