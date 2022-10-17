@@ -30,7 +30,7 @@
                             </div>
                             <div class="contact-box-detail">
                                 <h2 class="contact-title text-uppercase">ADDRESS</h2>
-                                <p>DLG building, Da Nang City, VietNamese.</p>
+                                <p>DLG tower, Da Nang City, VietNamese.</p>
                             </div>
                         </li>
                         <li>
