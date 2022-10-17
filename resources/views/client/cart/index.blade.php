@@ -45,7 +45,8 @@
                             @foreach ($existOrder as $order)
 
                             @foreach ($order->productOrders as $productOrder)
-                            <tr>
+                            <tr productId="{{$productOrder->productDetail->id}}"
+                                sizeId="{{$productOrder->sizeName->id}}">
                                 <td class="text-left">
                                     <div class="seller-box align-flax w-100">
                                         <div class="seller-img">
@@ -68,14 +69,25 @@
                                 <td><span class="price">{{$productOrder->sizeName->name}}</span></td>
                                 <td><span class="price">${{$productOrder->productDetail->price}}</span></td>
                                 <td>
-                                    <input style="width: 70px; margin: auto;" type="number" class="form-control"
-                                        value="{{$productOrder->quantity}}" />
+                                    <ul id="js-change-quantity">
+                                        <li>
+                                            <input style="width: 70px; margin: auto;" type="number" class="form-control"
+                                                value="{{$productOrder->quantity}}"
+                                                data-productId="{{$productOrder->productDetail->id}}"
+                                                data-sizeId="{{$productOrder->sizeName->id}}"
+                                                key="{{$productOrder->productDetail->id}}" />
+                                        </li>
+                                    </ul>
                                 </td>
-                                <td><span class="price">${{$productOrder->quantity * $productOrder->price}}</span></td>
+                                <td><span class="price" totalUpdate="true"
+                                        productId="{{$productOrder->productDetail->id}}"
+                                        sizeId="{{$productOrder->sizeName->id}}">
+                                        {{$productOrder->quantity * $productOrder->price}}</span>
+                                </td>
                                 <td>
-                                    <ul>
-                                        <li><a onclick="checkOrder()" product_id="{{$productOrder->productDetail->id}}"
-                                                size_id="{{$productOrder->sizeName->id}}" id="js-remove-order">
+                                    <ul id="js-ul-delete">
+                                        <li data-productId="{{$productOrder->productDetail->id}}"
+                                            data-sizeId="{{$productOrder->sizeName->id}}"><a>
                                                 <i class="fa fa-trash-o" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </td>
@@ -121,7 +133,8 @@
                                                 <td>Item(s)</td>
                                                 <td>
                                                     <div class="price-box">
-                                                        <span class="price">${{count($existOrder)}}</span>
+                                                        <span class="price" id="js-total-items"
+                                                            items="{{count($existOrder)}}">{{count($existOrder)}}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -129,7 +142,7 @@
                                                 <td class="payable"><b>Amount Payable</b></td>
                                                 <td>
                                                     <div class="price-box">
-                                                        <span class="price">${{$total}}</span>
+                                                        <span class="price" id="js-total-cart">${{$total}}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -151,35 +164,71 @@
 @endsection
 @section('js')
 <script type="text/javascript">
-function checkOrder() {
-    const product_id = $(this).attr(['product_id']);
-    console.log(product_id, 'product_id')
-}
 $(document).ready(function() {
+    $('#js-ul-delete li').click(function() {
+        const productId = $(this).attr('data-productid');
+        const sizeId = $(this).attr('data-sizeid');
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
+            url: '{{ url("/delete-order") }}',
+            data: {
+                sizeId: sizeId,
+                productId: productId
+            },
+            success: function(data) {
+                $(`[productId="${productId}"][sizeId="${sizeId}"]`).addClass('d-none');
+                $('#js-total-cart').html(`$${data.total}`);
+                const items = $('#js-total-items').attr('items');
+                $('#js-total-items').html(items - 1);
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+    });
 
-    $('#js-quantity-order').change(() => {
-        const quantity = $('#js-quantity-order').val();
-        console.log(quantity, 'quantity');
-        // $.ajax({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     },
-        //     type: 'POST',
-        //     url: '{{ url("/add-to-cart") }}',
-        //     data: {
-        //         size: size,
-        //         quantity: quantity,
-        //         productId: productId
-        //     },
-        //     success: function(data) {
-        //         window.location = data.redirect_url;
-        //     },
-        //     error: function(e) {
-        //         console.log(e);
-        //     }
-        // });
+    $('#js-change-quantity li input').change(function() {
+        const productId = $(this).attr('data-productid');
+        const sizeId = $(this).attr('data-sizeid');
+        const quantity = $(this).val();
+        console.log(quantity, 'quantity')
+        console.log(productId, 'productId')
+        console.log(sizeId, 'sizeId')
+
+
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
+            url: '{{ url("/handle-total-of-product") }}',
+            data: {
+                sizeId: sizeId,
+                quantity: quantity,
+                productId: productId
+            },
+            success: function(data) {
+                $(`[totalUpdate="true"][productId="${productId}"][sizeId="${sizeId}"]`)
+                    .html(`$${data.productTotal}`);
+                $('#js-total-cart').html(`$${data.total}`);
+
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
         // TODO handle ajax cart
     })
 });
 </script>
+@endsection
+@section('css')
+<style>
+.d-none {
+    display: none !important;
+}
+</style>
 @endsection
