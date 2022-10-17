@@ -24,10 +24,10 @@
                 <h2 class="footer-title text-uppercase">Information</h2>
                 <ul class="footer-block-contant">
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">Delivery Information</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <!-- <li><a href="#">Delivery Information</a></li> -->
+                    <!-- <li><a href="#">Privacy Policy</a></li> -->
+                    <!-- <li><a href="#">Terms & Conditions</a></li> -->
+                    <li><a href="/contact">Contact Us</a></li>
                     <li><a href="#">Brands</a></li>
                 </ul>
             </div>
@@ -46,9 +46,9 @@
                 <span class="opener plus"></span>
                 <h2 class="footer-title text-uppercase">Contact us</h2>
                 <ul class="footer-block-contant">
-                    <li><img src="/asset_client/images/cont-1.png" alt="img"><span>28 Green Tower, Street Name <br>Da Nang City, Viet Nam</span></li>
-                    <li><img src="/asset_client/images/cont-2.png" alt="img"><a href="tel:+911234567890">+ 84 123 456 789 0</a></li>
-                    <li><img src="/asset_client/images/cont-3.png" alt="img"><a href="mailto:xpoge@example.com">nice@gmail.com</a></li>
+                    <li><img src="/asset_client/images/cont-1.png" alt="img"><span>DLG tower <br>Da Nang City, Viet Nam</span></li>
+                    <li><img src="/asset_client/images/cont-2.png" alt="img"><a href="tel:+911234567890">+ 84 845045468</a></li>
+                    <li><img src="/asset_client/images/cont-3.png" alt="img"><a href="mailto:xpoge@example.com">nice.dlg.ad@gmail.com</a></li>
                 </ul>
             </div>
         </div>

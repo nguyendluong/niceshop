@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\User\Auth\LoginController;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\NewsController;
@@ -37,6 +38,14 @@ Route::get('/cart', [OrderController::class, 'cart'])->name('client.cart');
 Route::get('/update-quantity', [OrderController::class, 'updateQuantityOrder'])->name('client.updateQuantityOrder');
 Route::post('/checkout', [OrderController::class, 'checkout'])->name('client.checkout');
 
+Route::group(['prefix' => '/contact'], function () {
+    Route::get('/', [ContactController::class, 'index']);
+    Route::get('/create', [ContactController::class, 'create']);
+    Route::post('/create', [ContactController::class, 'store']);
+});
+
+
+
 Route::get('/client', function () {
     return view('client.homepages.index');
 });
@@ -63,7 +72,4 @@ Route::get('/product', function () {
 
 Route::get('/product-list', function () {
     return view ('client.product-list.index');
-});
-Route::get('/contact', function () {
-    return view ('client.contact.index');
 });

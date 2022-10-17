@@ -36,4 +36,3 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
-@toastr_css
