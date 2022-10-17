@@ -17,9 +17,9 @@ class OrderController extends Controller
     public function index()
     {
 
-        $users = User::all();
+        $orders = Order::all();
 
-        return view('admin.users.index', compact('users'));   
+        return view('admin.orders.index', compact('orders'));   
 
     }
 
