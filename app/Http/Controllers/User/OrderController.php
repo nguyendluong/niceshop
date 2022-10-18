@@ -78,10 +78,9 @@ class OrderController extends Controller
     {
         $user = Auth::guard('web')->user();
         $existOrder = Order::where('userId', $user->id)->where('status' , 0)->get();
-        $total = 0;
+        $total = self::totalCart();
         foreach ($existOrder as $order) {
             $order['productOrders'] = self::getProductFromOrderId($order);
-            $total = $total + $order['total'];
         }
 
         return view('client.cart.index', compact('existOrder', 'total'));
@@ -135,6 +134,73 @@ class OrderController extends Controller
         toastr()->success('Your order submit successfully');
        
         return redirect('/');
+    }
 
+    public function totalCart()
+    {
+        $user = Auth::guard('web')->user();
+
+        $existOrder = Order::where('userId', $user->id)->where('status' , 0)->get();
+        $total = 0;
+        foreach ($existOrder as $order) {
+            $productOrders = ProductOrder::where('orderId', $order->id)->get();
+            foreach ($productOrders as $prdOrder) {
+                $total = $total + $prdOrder->quantity *  $prdOrder->price;
+            }
+        }
+
+        return $total;
+    }
+
+    public function deleteOrder(Request $request)
+    {
+        $user = Auth::guard('web')->user();
+
+        $productId = $request->productId;
+        $sizeId = $request->sizeId;
+
+        $orderDetail = Order::where('productId', $productId)->where('userId', $user->id)->first();
+
+        $productOrderDelete = ProductOrder::where('sizeId', $sizeId)->where('orderId', $orderDetail->id)->first();
+        if ($productOrderDelete) {
+            $productOrderDelete->delete();
+        }
+
+        $productOrders = ProductOrder::where('orderId', $orderDetail->id)->get();
+
+        $total = self::totalCart();
+        if (count($productOrders) == 0) {
+            $order =  Order::where('productId', $productId)->where('userId', $user->id)->first();
+            if ($order) {
+                $order->delete();
+            }
+        }
+
+        return response()->json(['status'=>true,"total"=>$total]);
+    }
+
+    public function handleTotalOfProduct(Request $request)
+    {
+        $user = Auth::guard('web')->user();
+
+        $productId = $request->productId;
+        $sizeId = $request->sizeId;
+        $quantity = $request->quantity;
+
+        $orderDetail = Order::where('productId', $productId)->where('userId', $user->id)->first();
+
+        $productOrderDetail = ProductOrder::where('sizeId', $sizeId)->where('orderId', $orderDetail->id)->first();
+        if ($productOrderDetail) {
+            ProductOrder::where('sizeId', $sizeId)->where('orderId', $orderDetail->id)->update(['quantity' => $quantity]);
+        }
+
+        $pOrderDetail = ProductOrder::where('sizeId', $sizeId)->where('orderId', $orderDetail->id)->first();
+
+
+        $productTotal = $pOrderDetail->quantity * $pOrderDetail->price;
+        $total = self::totalCart();
+
+        
+        return response()->json(['status'=>true,"productTotal"=>$productTotal,"total"=>$total]);
     }
 }

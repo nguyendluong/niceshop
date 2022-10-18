@@ -49,8 +49,7 @@
                                 <div class="table-listing qty">
                                     <label>Qty:</label>
                                     <div class="fill-input">
-                                        <input type="number" id="js-data-quantity" class="input-text qty" value="1"
-                                            />
+                                        <input type="number" id="js-data-quantity" class="input-text qty" value="1" />
                                     </div>
                                 </div>
                                 <div class="table-listing qty">
@@ -69,7 +68,7 @@
                                             <a href="#" id="js-add-card" class="btn btn-color">
                                                 <input type="hidden" id="js-data-productId" value="{{$product->id}}" />
                                                 <img src="/asset_client/images/shop-bag.png" alt="bag">
-                                                <span>Add to cart</span>
+                                                <span id="js-text-card">Add to cart</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -114,6 +113,7 @@ $(document).ready(function() {
                 window.location = data.redirect_url;
             },
             error: function(e) {
+                $("#js-text-card").html('Please login !!!')
                 console.log(e);
             }
         });
@@ -121,4 +121,11 @@ $(document).ready(function() {
     })
 });
 </script>
+@endsection
+@section('css')
+<style>
+.price-box .product-action .btn-color {
+    width: 200px;
+}
+</style>
 @endsection

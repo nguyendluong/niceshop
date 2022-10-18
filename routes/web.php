@@ -37,6 +37,8 @@ Route::post('/add-to-cart', [OrderController::class, 'addToCart'])->name('client
 Route::get('/cart', [OrderController::class, 'cart'])->name('client.cart');
 Route::get('/update-quantity', [OrderController::class, 'updateQuantityOrder'])->name('client.updateQuantityOrder');
 Route::post('/checkout', [OrderController::class, 'checkout'])->name('client.checkout');
+Route::post('/delete-order', [OrderController::class, 'deleteOrder'])->name('client.deleteOrder');
+Route::post('/handle-total-of-product', [OrderController::class, 'handleTotalOfProduct'])->name('client.handleTotalOfProduct');
 
 Route::group(['prefix' => '/contact'], function () {
     Route::get('/', [ContactController::class, 'index']);
