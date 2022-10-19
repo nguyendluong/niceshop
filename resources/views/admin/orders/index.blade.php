@@ -14,13 +14,13 @@ Orders
                             <tr>
                                 <th>id</th>
                                 <th>productId</th>
-                                <th>usersId</th>
+                                <!-- <th>usersId</th> -->
                                 <th>total</th>
                                 <th>payment method</th>
                                 <th>note</th>
                                 <th>status</th>
-                                <th>edit</th>
-                                <th>delete</th>
+                                <!-- <th>edit</th> -->
+                                <!-- <th>delete</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -28,7 +28,7 @@ Orders
                             <tr>
                                 <td>{{ $order->id }}</td>
                                 <td>{{ $order->productId }}</td>
-                                <td>{{ $order->orderId }}</td>
+                                <!-- <td>{{ $order->orderId }}</td> -->
                                 <td>{{ $order->total }}</td>
                                 <td>{{ $order->paymentMethod }}</td>
                                 <td>{{ $order->note }}</td>
@@ -37,7 +37,7 @@ Orders
                                 @else
                                 <td><span class="badge badge-danger">Inactive</span></td>
                                 @endif
-                                <td>
+                                <!-- <td>
                                     <a href="/admin/orders/update/{{$order->id}}">
                                         <i class="feather icon-edit-1"></i>
                                     </a>
@@ -46,7 +46,7 @@ Orders
                                     <a href="/admin/orders/delete/{{$order->id}}">
                                         <i class="feather icon-trash-2 danger"></i>
                                     </a>
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
                         </tbody>

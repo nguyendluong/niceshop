@@ -51,7 +51,9 @@ Route::group(['prefix' => '/contact'], function () {
 Route::get('/client', function () {
     return view('client.homepages.index');
 });
-
+Route::get('/about', function () {
+    return view('client.about.index');
+});
 Route::get('/news', function () {
     return view ('client.news.index');
 });
