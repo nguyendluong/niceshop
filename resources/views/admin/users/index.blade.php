@@ -18,8 +18,8 @@ Users
                                 <th>email</th>
                                 <th>phone</th>
                                 <th>status</th>
-                                <th>edit</th>
-                                <th>delete</th>
+                                <!-- <th>edit</th> -->
+                                <!-- <th>delete</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -35,7 +35,7 @@ Users
                                 @else
                                 <td><span class="badge badge-danger">Inactive</span></td>
                                 @endif
-                                <td>
+                                <!-- <td>
                                     <a href="/admin/users/update/{{$user->id}}">
                                         <i class="feather icon-edit-1"></i>
                                     </a>
@@ -44,7 +44,7 @@ Users
                                     <a href="/admin/users/delete/{{$user->id}}">
                                         <i class="feather icon-trash-2 danger"></i>
                                     </a>
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
                         </tbody>

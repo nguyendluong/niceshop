@@ -19,6 +19,7 @@
     </div>
     @include('client.layouts.foot')
     @include('client.layouts.js')
+    
     <script>
     /* ------------ Newslater-popup JS Start ------------- */
     /*$(window).on('load', function(){

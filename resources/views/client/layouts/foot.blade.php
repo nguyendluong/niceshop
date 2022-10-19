@@ -1,4 +1,4 @@
-<footer class="footer pt-100">
+<footer class="footer pt-100" style="background-color: #1111;">
     <div class="container">
         <div class="footer-inner">
             <!-- <div class="footer-box">
@@ -23,7 +23,7 @@
                 <span class="opener plus"></span>
                 <h2 class="footer-title text-uppercase">Information</h2>
                 <ul class="footer-block-contant">
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="/about">About Us</a></li>
                     <!-- <li><a href="#">Delivery Information</a></li> -->
                     <!-- <li><a href="#">Privacy Policy</a></li> -->
                     <!-- <li><a href="#">Terms & Conditions</a></li> -->

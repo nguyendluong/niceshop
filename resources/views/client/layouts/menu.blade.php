@@ -1,5 +1,5 @@
 <? use Illuminate\Support\Facades\Auth; ?>
-<header class="header transition">
+<header class="header transition" >
     <div class="container position-r">
         <div class="row">
             <div class="col-lg-2 col-md-4 col-6 align-flax">
@@ -70,6 +70,9 @@
                             </li>
                             <li>
                                 <a href="/contact">Contact</a>
+                            </li>
+                            <li>
+                                <a href="/about">About Us</a>
                             </li>
                         </ul>
                     </div>
